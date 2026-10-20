@@ -1,0 +1,14 @@
+.git
+.venv
+.venv.nosync
+**/node_modules
+web/frontend/dist
+third_party
+results
+kaggle
+tests
+bundle
+docs
+paper
+**/__pycache__
+.pytest_cache
