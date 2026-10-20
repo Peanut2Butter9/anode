@@ -1,0 +1,34 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "transistor",
+  "model": "glass_official",
+  "seed": 0,
+  "image_size": 288,
+  "n_test": 100,
+  "fit_seconds": 0.0,
+  "test_seconds_total": 9.979989516000046,
+  "latency": {
+    "ms_per_image_mean": 35.75042539999913,
+    "ms_per_image_std": 5.577950157580987,
+    "n": 30
+  },
+  "checkpoint": "ckpt_best_52.pth",
+  "best_epoch": 52,
+  "note": "released checkpoint; the official training script keeps the epoch with the best test AUROC",
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9987499999999999,
+  "f1_max": 0.9873417721518987,
+  "f1_max_threshold": 0.9817913770675659,
+  "val_threshold": null,
+  "n_val": 0,
+  "per_defect_auroc": {
+    "bent_lead": 1.0,
+    "cut_lead": 0.995,
+    "damaged_case": 1.0,
+    "misplaced": 1.0
+  },
+  "pixel_auroc": 0.9769837243344692,
+  "aupro_30": 0.947730764135789
+}

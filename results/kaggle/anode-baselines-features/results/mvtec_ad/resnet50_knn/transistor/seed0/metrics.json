@@ -1,0 +1,40 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "transistor",
+  "model": "resnet50_knn",
+  "seed": 0,
+  "image_size": 256,
+  "n_train": 192,
+  "n_val": 21,
+  "n_test": 100,
+  "fit_seconds": 6.982820794997679,
+  "test_seconds_total": 3.592615764002403,
+  "latency": {
+    "ms_per_image_mean": 8.815147466763543,
+    "ms_per_image_std": 1.630173469066184,
+    "n": 30
+  },
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.8266666666666667,
+  "f1_max": 0.7380952380952381,
+  "f1_max_threshold": 5.361384391784668,
+  "val_threshold": {
+    "threshold": 6.300105094909668,
+    "accuracy": 0.71,
+    "precision": 1.0,
+    "recall": 0.275,
+    "f1": 0.4313725490196079,
+    "tp": 11,
+    "tn": 60,
+    "fp": 0,
+    "fn": 29
+  },
+  "per_defect_auroc": {
+    "bent_lead": 0.8383333333333334,
+    "cut_lead": 0.8583333333333333,
+    "damaged_case": 0.6133333333333333,
+    "misplaced": 0.9966666666666667
+  }
+}

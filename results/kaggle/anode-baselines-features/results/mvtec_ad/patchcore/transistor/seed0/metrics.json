@@ -1,0 +1,42 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "transistor",
+  "model": "patchcore",
+  "seed": 0,
+  "image_size": 256,
+  "n_train": 192,
+  "n_val": 21,
+  "n_test": 100,
+  "fit_seconds": 32.131806576999224,
+  "test_seconds_total": 4.449963407001633,
+  "latency": {
+    "ms_per_image_mean": 30.256134066682232,
+    "ms_per_image_std": 0.8210123660807314,
+    "n": 30
+  },
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9987499999999999,
+  "f1_max": 0.9876543209876543,
+  "f1_max_threshold": 1.9221291542053223,
+  "val_threshold": {
+    "threshold": 1.9191104173660278,
+    "accuracy": 0.99,
+    "precision": 0.975609756097561,
+    "recall": 1.0,
+    "f1": 0.9876543209876543,
+    "tp": 40,
+    "tn": 59,
+    "fp": 1,
+    "fn": 0
+  },
+  "per_defect_auroc": {
+    "bent_lead": 0.9983333333333333,
+    "cut_lead": 1.0,
+    "damaged_case": 1.0,
+    "misplaced": 0.9966666666666666
+  },
+  "pixel_auroc": 0.9791172638213301,
+  "aupro_30": 0.952046784032513
+}

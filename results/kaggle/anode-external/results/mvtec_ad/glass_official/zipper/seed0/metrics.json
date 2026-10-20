@@ -1,0 +1,37 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "zipper",
+  "model": "glass_official",
+  "seed": 0,
+  "image_size": 288,
+  "n_test": 151,
+  "fit_seconds": 0.0,
+  "test_seconds_total": 14.104271064000045,
+  "latency": {
+    "ms_per_image_mean": 29.593368999993192,
+    "ms_per_image_std": 1.0365543735842466,
+    "n": 30
+  },
+  "checkpoint": "ckpt_best_149.pth",
+  "best_epoch": 149,
+  "note": "released checkpoint; the official training script keeps the epoch with the best test AUROC",
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9994747899159664,
+  "f1_max": 0.9957805907172996,
+  "f1_max_threshold": 0.8219218850135803,
+  "val_threshold": null,
+  "n_val": 0,
+  "per_defect_auroc": {
+    "broken_teeth": 1.0,
+    "combined": 1.0,
+    "fabric_border": 1.0,
+    "fabric_interior": 0.99609375,
+    "rough": 1.0,
+    "split_teeth": 1.0,
+    "squeezed_teeth": 1.0
+  },
+  "pixel_auroc": 0.9964156252099876,
+  "aupro_30": 0.9860616421637736
+}

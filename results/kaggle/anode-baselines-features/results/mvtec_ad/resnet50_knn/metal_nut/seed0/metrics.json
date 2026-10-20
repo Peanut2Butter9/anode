@@ -1,0 +1,40 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "metal_nut",
+  "model": "resnet50_knn",
+  "seed": 0,
+  "image_size": 256,
+  "n_train": 198,
+  "n_val": 22,
+  "n_test": 115,
+  "fit_seconds": 5.510792817000038,
+  "test_seconds_total": 3.939069700998516,
+  "latency": {
+    "ms_per_image_mean": 7.119675699505024,
+    "ms_per_image_std": 0.3302751263976869,
+    "n": 30
+  },
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.8132942326490714,
+  "f1_max": 0.9000000000000001,
+  "f1_max_threshold": 3.5578811168670654,
+  "val_threshold": {
+    "threshold": 4.5182085037231445,
+    "accuracy": 0.4608695652173913,
+    "precision": 0.9696969696969697,
+    "recall": 0.34408602150537637,
+    "f1": 0.5079365079365079,
+    "tp": 32,
+    "tn": 21,
+    "fp": 1,
+    "fn": 61
+  },
+  "per_defect_auroc": {
+    "bent": 0.8072727272727273,
+    "color": 0.6446280991735537,
+    "flip": 1.0,
+    "scratch": 0.7944664031620554
+  }
+}

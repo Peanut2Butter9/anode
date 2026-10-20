@@ -1,0 +1,41 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "bottle",
+  "model": "patchcore",
+  "seed": 0,
+  "image_size": 256,
+  "n_train": 188,
+  "n_val": 21,
+  "n_test": 83,
+  "fit_seconds": 29.393521163001424,
+  "test_seconds_total": 3.1956624429985823,
+  "latency": {
+    "ms_per_image_mean": 30.225605299832143,
+    "ms_per_image_std": 0.2283431395491395,
+    "n": 30
+  },
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 1.0,
+  "f1_max": 1.0,
+  "f1_max_threshold": 1.7902873754501343,
+  "val_threshold": {
+    "threshold": 1.5839482545852661,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "tp": 63,
+    "tn": 20,
+    "fp": 0,
+    "fn": 0
+  },
+  "per_defect_auroc": {
+    "broken_large": 1.0,
+    "broken_small": 1.0,
+    "contamination": 1.0
+  },
+  "pixel_auroc": 0.9869886382973312,
+  "aupro_30": 0.9468232956798044
+}

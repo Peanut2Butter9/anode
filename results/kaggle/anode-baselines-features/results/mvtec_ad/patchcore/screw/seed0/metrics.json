@@ -1,0 +1,43 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "screw",
+  "model": "patchcore",
+  "seed": 0,
+  "image_size": 256,
+  "n_train": 288,
+  "n_val": 32,
+  "n_test": 160,
+  "fit_seconds": 63.77061262500138,
+  "test_seconds_total": 7.261462331000075,
+  "latency": {
+    "ms_per_image_mean": 43.342804166604765,
+    "ms_per_image_std": 0.8191715101033878,
+    "n": 30
+  },
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9374871899979503,
+  "f1_max": 0.9230769230769231,
+  "f1_max_threshold": 1.3916246891021729,
+  "val_threshold": {
+    "threshold": 1.5556731224060059,
+    "accuracy": 0.74375,
+    "precision": 0.9875,
+    "recall": 0.6638655462184874,
+    "f1": 0.7939698492462312,
+    "tp": 79,
+    "tn": 40,
+    "fp": 1,
+    "fn": 40
+  },
+  "per_defect_auroc": {
+    "manipulated_front": 0.8709349593495935,
+    "scratch_head": 0.9471544715447154,
+    "scratch_neck": 0.9951219512195122,
+    "thread_side": 0.887592788971368,
+    "thread_top": 0.9840933191940615
+  },
+  "pixel_auroc": 0.9898269556670264,
+  "aupro_30": 0.9443214330291793
+}

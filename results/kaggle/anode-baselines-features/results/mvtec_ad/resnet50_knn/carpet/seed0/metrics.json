@@ -1,0 +1,41 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "carpet",
+  "model": "resnet50_knn",
+  "seed": 0,
+  "image_size": 256,
+  "n_train": 252,
+  "n_val": 28,
+  "n_test": 117,
+  "fit_seconds": 13.37742595599775,
+  "test_seconds_total": 6.250737473001209,
+  "latency": {
+    "ms_per_image_mean": 7.927369799775382,
+    "ms_per_image_std": 0.5491956415351122,
+    "n": 30
+  },
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.7030497592295345,
+  "f1_max": 0.8877005347593584,
+  "f1_max_threshold": 2.2784717082977295,
+  "val_threshold": {
+    "threshold": 3.1169490814208984,
+    "accuracy": 0.6324786324786325,
+    "precision": 0.8285714285714286,
+    "recall": 0.651685393258427,
+    "f1": 0.7295597484276731,
+    "tp": 58,
+    "tn": 16,
+    "fp": 12,
+    "fn": 31
+  },
+  "per_defect_auroc": {
+    "color": 0.612781954887218,
+    "cut": 0.7836134453781513,
+    "hole": 0.7857142857142857,
+    "metal_contamination": 0.5252100840336135,
+    "thread": 0.806390977443609
+  }
+}

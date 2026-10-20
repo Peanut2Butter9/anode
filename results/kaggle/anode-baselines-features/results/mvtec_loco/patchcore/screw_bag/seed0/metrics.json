@@ -1,0 +1,40 @@
+{
+  "dataset": "mvtec_loco",
+  "category": "screw_bag",
+  "model": "patchcore",
+  "seed": 0,
+  "image_size": 256,
+  "n_train": 360,
+  "n_val": 60,
+  "n_test": 341,
+  "fit_seconds": 104.70597754000119,
+  "test_seconds_total": 19.870202024001628,
+  "latency": {
+    "ms_per_image_mean": 50.700800266834754,
+    "ms_per_image_std": 1.6373667860163426,
+    "n": 30
+  },
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.6801407290964893,
+  "f1_max": 0.7821428571428571,
+  "f1_max_threshold": 2.124396800994873,
+  "val_threshold": {
+    "threshold": 2.6872880458831787,
+    "accuracy": 0.4046920821114369,
+    "precision": 1.0,
+    "recall": 0.0730593607305936,
+    "f1": 0.13617021276595745,
+    "tp": 16,
+    "tn": 122,
+    "fp": 0,
+    "fn": 203
+  },
+  "per_defect_auroc": {
+    "logical_anomalies": 0.5960871126002154,
+    "structural_anomalies": 0.8205717712914833
+  },
+  "image_auroc_logical": 0.5960871126002154,
+  "image_auroc_structural": 0.8205717712914833
+}

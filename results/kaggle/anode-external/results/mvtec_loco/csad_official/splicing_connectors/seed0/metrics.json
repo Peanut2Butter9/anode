@@ -1,0 +1,41 @@
+{
+  "dataset": "mvtec_loco",
+  "category": "splicing_connectors",
+  "model": "csad_official",
+  "seed": 0,
+  "image_size": 256,
+  "n_val": 60,
+  "n_test": 312,
+  "fit_seconds": 0.0,
+  "test_seconds_total": 49.735497785999996,
+  "latency": {
+    "ms_per_image_mean": 62.482017403904976,
+    "ms_per_image_std": 1.9331847435514644,
+    "n": 307
+  },
+  "checkpoint": "splicing_connectors.pth",
+  "note": "released checkpoint; the official training script keeps the iteration with the best test AUROC. CSAD also uses the validation split to normalise its scores.",
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9602473113597771,
+  "f1_max": 0.935064935064935,
+  "f1_max_threshold": 9.300592422485352,
+  "val_threshold": {
+    "threshold": 26.77497114564564,
+    "accuracy": 0.8301282051282052,
+    "precision": 0.9929577464788732,
+    "recall": 0.7305699481865285,
+    "f1": 0.8417910447761193,
+    "tp": 141,
+    "tn": 118,
+    "fp": 1,
+    "fn": 52
+  },
+  "per_defect_auroc": {
+    "logical_anomalies": 0.9738562091503268,
+    "structural_anomalies": 0.9429560059317844
+  },
+  "image_auroc_logical": 0.9738562091503268,
+  "image_auroc_structural": 0.9429560059317844
+}

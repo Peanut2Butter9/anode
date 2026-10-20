@@ -1,0 +1,41 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "tile",
+  "model": "resnet50_knn",
+  "seed": 0,
+  "image_size": 256,
+  "n_train": 207,
+  "n_val": 23,
+  "n_test": 117,
+  "fit_seconds": 6.506904141002451,
+  "test_seconds_total": 4.204889631000697,
+  "latency": {
+    "ms_per_image_mean": 7.322940600230747,
+    "ms_per_image_std": 0.19639537400525323,
+    "n": 30
+  },
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9888167388167388,
+  "f1_max": 0.9704142011834319,
+  "f1_max_threshold": 4.452218532562256,
+  "val_threshold": {
+    "threshold": 4.541625022888184,
+    "accuracy": 0.9401709401709402,
+    "precision": 0.963855421686747,
+    "recall": 0.9523809523809523,
+    "f1": 0.9580838323353292,
+    "tp": 80,
+    "tn": 30,
+    "fp": 3,
+    "fn": 4
+  },
+  "per_defect_auroc": {
+    "crack": 1.0,
+    "glue_strip": 1.0,
+    "gray_stroke": 0.9507575757575758,
+    "oil": 1.0,
+    "rough": 0.9898989898989898
+  }
+}

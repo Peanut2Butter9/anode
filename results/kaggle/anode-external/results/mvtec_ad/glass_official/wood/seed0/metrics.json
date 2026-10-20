@@ -1,0 +1,35 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "wood",
+  "model": "glass_official",
+  "seed": 0,
+  "image_size": 288,
+  "n_test": 79,
+  "fit_seconds": 0.0,
+  "test_seconds_total": 9.119999437000047,
+  "latency": {
+    "ms_per_image_mean": 33.47196423333495,
+    "ms_per_image_std": 4.738800131718214,
+    "n": 30
+  },
+  "checkpoint": "ckpt_best_637.pth",
+  "best_epoch": 637,
+  "note": "released checkpoint; the official training script keeps the epoch with the best test AUROC",
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.999122807017544,
+  "f1_max": 0.9917355371900827,
+  "f1_max_threshold": 0.8717166781425476,
+  "val_threshold": null,
+  "n_val": 0,
+  "per_defect_auroc": {
+    "color": 1.0,
+    "combined": 1.0,
+    "hole": 1.0,
+    "liquid": 1.0,
+    "scratch": 0.9974937343358397
+  },
+  "pixel_auroc": 0.9883794115483523,
+  "aupro_30": 0.974294222776281
+}

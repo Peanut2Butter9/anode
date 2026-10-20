@@ -1,0 +1,41 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "screw",
+  "model": "resnet50_knn",
+  "seed": 0,
+  "image_size": 256,
+  "n_train": 288,
+  "n_val": 32,
+  "n_test": 160,
+  "fit_seconds": 8.29342514900054,
+  "test_seconds_total": 3.9340594679997594,
+  "latency": {
+    "ms_per_image_mean": 6.855302266558283,
+    "ms_per_image_std": 0.31987499712687545,
+    "n": 30
+  },
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.5913096946095512,
+  "f1_max": 0.8530465949820789,
+  "f1_max_threshold": 1.9282792806625366,
+  "val_threshold": {
+    "threshold": 3.4169795513153076,
+    "accuracy": 0.2625,
+    "precision": 1.0,
+    "recall": 0.008403361344537815,
+    "f1": 0.016666666666666666,
+    "tp": 1,
+    "tn": 41,
+    "fp": 0,
+    "fn": 118
+  },
+  "per_defect_auroc": {
+    "manipulated_front": 0.6747967479674796,
+    "scratch_head": 0.5447154471544715,
+    "scratch_neck": 0.49560975609756097,
+    "thread_side": 0.5577942735949099,
+    "thread_top": 0.6903499469777307
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "zipper",
+  "model": "glass",
+  "seed": 0,
+  "image_size": 288,
+  "n_train": 216,
+  "n_val": 24,
+  "n_test": 151,
+  "epochs": 50,
+  "checkpoint_epoch": 49,
+  "eval_every": 5,
+  "svd": 0,
+  "fit_seconds": 3745.2160926789998,
+  "seconds_per_epoch": 74.90432185358,
+  "test_seconds_total": 40.26193924400013,
+  "latency": {
+    "ms_per_image_mean": 27.724145133379352,
+    "ms_per_image_std": 0.7227778504116847,
+    "n": 30
+  },
+  "note": "official GLASS code, last-epoch checkpoint",
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9976365546218487,
+  "f1_max": 0.9915254237288135,
+  "f1_max_threshold": 0.7131956219673157,
+  "val_threshold": {
+    "threshold": 0.34249870832426493,
+    "accuracy": 0.9668874172185431,
+    "precision": 0.9596774193548387,
+    "recall": 1.0,
+    "f1": 0.9794238683127572,
+    "tp": 119,
+    "tn": 27,
+    "fp": 5,
+    "fn": 0
+  },
+  "per_defect_auroc": {
+    "broken_teeth": 1.0,
+    "combined": 1.0,
+    "fabric_border": 1.0,
+    "fabric_interior": 0.990234375,
+    "rough": 1.0,
+    "split_teeth": 1.0,
+    "squeezed_teeth": 0.9921875
+  },
+  "pixel_auroc": 0.9924417811272336,
+  "aupro_30": 0.9733776141451983
+}

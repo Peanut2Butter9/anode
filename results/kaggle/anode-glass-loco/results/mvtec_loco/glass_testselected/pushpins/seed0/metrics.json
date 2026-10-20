@@ -1,0 +1,46 @@
+{
+  "dataset": "mvtec_loco",
+  "category": "pushpins",
+  "model": "glass_testselected",
+  "seed": 0,
+  "image_size": 288,
+  "n_train": 372,
+  "n_val": 69,
+  "n_test": 310,
+  "epochs": 50,
+  "checkpoint_epoch": 9,
+  "eval_every": 5,
+  "svd": 0,
+  "fit_seconds": 4723.983906629001,
+  "seconds_per_epoch": 94.47967813258,
+  "test_seconds_total": 16.036461179999606,
+  "latency": {
+    "ms_per_image_mean": 35.11501106665188,
+    "ms_per_image_std": 6.244314535970717,
+    "n": 30
+  },
+  "note": "ANALYSIS ONLY: epoch chosen by the official script on the test set",
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.7322210987529492,
+  "f1_max": 0.7304347826086957,
+  "f1_max_threshold": 0.5644556283950806,
+  "val_threshold": {
+    "threshold": 0.807116332913408,
+    "accuracy": 0.6,
+    "precision": 0.9444444444444444,
+    "recall": 0.29651162790697677,
+    "f1": 0.45132743362831856,
+    "tp": 51,
+    "tn": 135,
+    "fp": 3,
+    "fn": 121
+  },
+  "per_defect_auroc": {
+    "logical_anomalies": 0.6519350215002389,
+    "structural_anomalies": 0.8224190373948828
+  },
+  "image_auroc_logical": 0.6519350215002389,
+  "image_auroc_structural": 0.8224190373948828
+}

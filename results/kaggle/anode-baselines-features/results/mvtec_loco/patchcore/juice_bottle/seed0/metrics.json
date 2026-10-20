@@ -1,0 +1,40 @@
+{
+  "dataset": "mvtec_loco",
+  "category": "juice_bottle",
+  "model": "patchcore",
+  "seed": 0,
+  "image_size": 256,
+  "n_train": 335,
+  "n_val": 54,
+  "n_test": 330,
+  "fit_seconds": 88.50746633499875,
+  "test_seconds_total": 17.497316837001563,
+  "latency": {
+    "ms_per_image_mean": 47.88450410002648,
+    "ms_per_image_std": 0.795322398887391,
+    "n": 30
+  },
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9534349080418318,
+  "f1_max": 0.944206008583691,
+  "f1_max_threshold": 1.5317938327789307,
+  "val_threshold": {
+    "threshold": 1.7058454751968384,
+    "accuracy": 0.8515151515151516,
+    "precision": 0.9844559585492227,
+    "recall": 0.8050847457627118,
+    "f1": 0.8857808857808857,
+    "tp": 190,
+    "tn": 91,
+    "fp": 3,
+    "fn": 46
+  },
+  "per_defect_auroc": {
+    "logical_anomalies": 0.9429877135151334,
+    "structural_anomalies": 0.9692168401991851
+  },
+  "image_auroc_logical": 0.9429877135151334,
+  "image_auroc_structural": 0.9692168401991851
+}

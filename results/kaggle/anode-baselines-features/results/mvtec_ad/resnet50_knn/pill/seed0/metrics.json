@@ -1,0 +1,43 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "pill",
+  "model": "resnet50_knn",
+  "seed": 0,
+  "image_size": 256,
+  "n_train": 240,
+  "n_val": 27,
+  "n_test": 167,
+  "fit_seconds": 7.600983741998789,
+  "test_seconds_total": 4.709426828001597,
+  "latency": {
+    "ms_per_image_mean": 7.169284866783225,
+    "ms_per_image_std": 0.39712213172129723,
+    "n": 30
+  },
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.7195853791598472,
+  "f1_max": 0.9185667752442997,
+  "f1_max_threshold": 3.0666613578796387,
+  "val_threshold": {
+    "threshold": 4.4173736572265625,
+    "accuracy": 0.24550898203592814,
+    "precision": 1.0,
+    "recall": 0.10638297872340426,
+    "f1": 0.1923076923076923,
+    "tp": 15,
+    "tn": 26,
+    "fp": 0,
+    "fn": 126
+  },
+  "per_defect_auroc": {
+    "color": 0.6492307692307693,
+    "combined": 0.6923076923076923,
+    "contamination": 0.7179487179487178,
+    "crack": 0.5621301775147929,
+    "faulty_imprint": 0.9412955465587045,
+    "pill_type": 1.0,
+    "scratch": 0.703525641025641
+  }
+}

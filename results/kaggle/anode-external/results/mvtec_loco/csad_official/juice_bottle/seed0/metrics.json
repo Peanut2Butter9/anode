@@ -1,0 +1,41 @@
+{
+  "dataset": "mvtec_loco",
+  "category": "juice_bottle",
+  "model": "csad_official",
+  "seed": 0,
+  "image_size": 256,
+  "n_val": 54,
+  "n_test": 330,
+  "fit_seconds": 0.0,
+  "test_seconds_total": 46.23055887600003,
+  "latency": {
+    "ms_per_image_mean": 63.534746489232866,
+    "ms_per_image_std": 2.0265540951400904,
+    "n": 325
+  },
+  "checkpoint": "juice_bottle.pth",
+  "note": "released checkpoint; the official training script keeps the iteration with the best test AUROC. CSAD also uses the validation split to normalise its scores.",
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9562747926433465,
+  "f1_max": 0.9432314410480349,
+  "f1_max_threshold": 11.130973815917969,
+  "val_threshold": {
+    "threshold": 15.1242753793192,
+    "accuracy": 0.8939393939393939,
+    "precision": 0.9855072463768116,
+    "recall": 0.864406779661017,
+    "f1": 0.9209932279909707,
+    "tp": 204,
+    "tn": 91,
+    "fp": 3,
+    "fn": 32
+  },
+  "per_defect_auroc": {
+    "logical_anomalies": 0.9548996104285287,
+    "structural_anomalies": 0.9583521955636034
+  },
+  "image_auroc_logical": 0.9548996104285287,
+  "image_auroc_structural": 0.9583521955636034
+}

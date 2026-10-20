@@ -1,0 +1,46 @@
+{
+  "dataset": "mvtec_loco",
+  "category": "splicing_connectors",
+  "model": "glass",
+  "seed": 0,
+  "image_size": 288,
+  "n_train": 360,
+  "n_val": 60,
+  "n_test": 312,
+  "epochs": 50,
+  "checkpoint_epoch": 49,
+  "eval_every": 5,
+  "svd": 0,
+  "fit_seconds": 4621.746160076997,
+  "seconds_per_epoch": 92.43492320153993,
+  "test_seconds_total": 14.626179058999696,
+  "latency": {
+    "ms_per_image_mean": 32.52887369962991,
+    "ms_per_image_std": 4.439033100375989,
+    "n": 30
+  },
+  "note": "official GLASS code, last-epoch checkpoint",
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.7799451386772325,
+  "f1_max": 0.7664670658682635,
+  "f1_max_threshold": 0.46129849553108215,
+  "val_threshold": {
+    "threshold": 0.9346220024171641,
+    "accuracy": 0.6282051282051282,
+    "precision": 0.9873417721518988,
+    "recall": 0.40414507772020725,
+    "f1": 0.5735294117647058,
+    "tp": 78,
+    "tn": 118,
+    "fp": 1,
+    "fn": 115
+  },
+  "per_defect_auroc": {
+    "logical_anomalies": 0.6803610333022098,
+    "structural_anomalies": 0.9064755313890263
+  },
+  "image_auroc_logical": 0.6803610333022098,
+  "image_auroc_structural": 0.9064755313890263
+}

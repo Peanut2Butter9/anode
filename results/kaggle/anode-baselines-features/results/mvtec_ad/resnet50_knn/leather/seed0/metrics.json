@@ -1,0 +1,41 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "leather",
+  "model": "resnet50_knn",
+  "seed": 0,
+  "image_size": 256,
+  "n_train": 221,
+  "n_val": 24,
+  "n_test": 124,
+  "fit_seconds": 9.379023159999633,
+  "test_seconds_total": 4.924168839999766,
+  "latency": {
+    "ms_per_image_mean": 6.894333066399365,
+    "ms_per_image_std": 0.6855430697347994,
+    "n": 30
+  },
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.8699048913043479,
+  "f1_max": 0.8777777777777778,
+  "f1_max_threshold": 2.3394134044647217,
+  "val_threshold": {
+    "threshold": 3.105224609375,
+    "accuracy": 0.7016129032258065,
+    "precision": 1.0,
+    "recall": 0.5978260869565217,
+    "f1": 0.7482993197278911,
+    "tp": 55,
+    "tn": 32,
+    "fp": 0,
+    "fn": 37
+  },
+  "per_defect_auroc": {
+    "color": 0.8125,
+    "cut": 0.7664473684210525,
+    "fold": 0.9044117647058824,
+    "glue": 0.8914473684210527,
+    "poke": 0.984375
+  }
+}

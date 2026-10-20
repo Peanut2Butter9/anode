@@ -1,0 +1,43 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "zipper",
+  "model": "resnet50_knn",
+  "seed": 0,
+  "image_size": 256,
+  "n_train": 216,
+  "n_val": 24,
+  "n_test": 151,
+  "fit_seconds": 4.668090137001855,
+  "test_seconds_total": 3.147500825001771,
+  "latency": {
+    "ms_per_image_mean": 6.850947566272225,
+    "ms_per_image_std": 0.41799024387394956,
+    "n": 30
+  },
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9099264705882353,
+  "f1_max": 0.9322709163346613,
+  "f1_max_threshold": 2.456688642501831,
+  "val_threshold": {
+    "threshold": 3.4110798835754395,
+    "accuracy": 0.5695364238410596,
+    "precision": 1.0,
+    "recall": 0.453781512605042,
+    "f1": 0.6242774566473989,
+    "tp": 54,
+    "tn": 32,
+    "fp": 0,
+    "fn": 65
+  },
+  "per_defect_auroc": {
+    "broken_teeth": 0.8601973684210527,
+    "combined": 0.953125,
+    "fabric_border": 0.9889705882352942,
+    "fabric_interior": 0.72265625,
+    "rough": 0.9191176470588236,
+    "split_teeth": 0.9878472222222222,
+    "squeezed_teeth": 0.931640625
+  }
+}

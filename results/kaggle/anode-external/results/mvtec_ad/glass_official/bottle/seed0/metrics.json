@@ -1,0 +1,33 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "bottle",
+  "model": "glass_official",
+  "seed": 0,
+  "image_size": 288,
+  "n_test": 83,
+  "fit_seconds": 0.0,
+  "test_seconds_total": 8.466420321999976,
+  "latency": {
+    "ms_per_image_mean": 29.913745566665284,
+    "ms_per_image_std": 2.3213639011440046,
+    "n": 30
+  },
+  "checkpoint": "ckpt_best_543.pth",
+  "best_epoch": 543,
+  "note": "released checkpoint; the official training script keeps the epoch with the best test AUROC",
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 1.0,
+  "f1_max": 1.0,
+  "f1_max_threshold": 0.9494683742523193,
+  "val_threshold": null,
+  "n_val": 0,
+  "per_defect_auroc": {
+    "broken_large": 1.0,
+    "broken_small": 1.0,
+    "contamination": 1.0
+  },
+  "pixel_auroc": 0.993245208168909,
+  "aupro_30": 0.9720595753525091
+}

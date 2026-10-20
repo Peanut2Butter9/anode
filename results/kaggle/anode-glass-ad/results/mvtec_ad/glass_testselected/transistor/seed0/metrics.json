@@ -1,0 +1,48 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "transistor",
+  "model": "glass_testselected",
+  "seed": 0,
+  "image_size": 288,
+  "n_train": 192,
+  "n_val": 21,
+  "n_test": 100,
+  "epochs": 50,
+  "checkpoint_epoch": 44,
+  "eval_every": 5,
+  "svd": 1,
+  "fit_seconds": 2776.039236101,
+  "seconds_per_epoch": 55.52078472202,
+  "test_seconds_total": 4.271816278000188,
+  "latency": {
+    "ms_per_image_mean": 31.341407933359733,
+    "ms_per_image_std": 3.483092756047888,
+    "n": 30
+  },
+  "note": "ANALYSIS ONLY: epoch chosen by the official script on the test set",
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9941666666666666,
+  "f1_max": 0.951219512195122,
+  "f1_max_threshold": 0.9483562111854553,
+  "val_threshold": {
+    "threshold": 0.9841558108792288,
+    "accuracy": 0.91,
+    "precision": 1.0,
+    "recall": 0.775,
+    "f1": 0.8732394366197184,
+    "tp": 31,
+    "tn": 60,
+    "fp": 0,
+    "fn": 9
+  },
+  "per_defect_auroc": {
+    "bent_lead": 0.9966666666666667,
+    "cut_lead": 0.9883333333333333,
+    "damaged_case": 1.0,
+    "misplaced": 0.9916666666666666
+  },
+  "pixel_auroc": 0.9669522108984628,
+  "aupro_30": 0.939967215043107
+}

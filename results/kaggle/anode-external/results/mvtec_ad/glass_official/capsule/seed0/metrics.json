@@ -1,0 +1,35 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "capsule",
+  "model": "glass_official",
+  "seed": 0,
+  "image_size": 288,
+  "n_test": 132,
+  "fit_seconds": 0.0,
+  "test_seconds_total": 15.299027310999918,
+  "latency": {
+    "ms_per_image_mean": 35.12332766666759,
+    "ms_per_image_std": 5.276730569066225,
+    "n": 30
+  },
+  "checkpoint": "ckpt_best_56.pth",
+  "best_epoch": 56,
+  "note": "released checkpoint; the official training script keeps the epoch with the best test AUROC",
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9992022337455126,
+  "f1_max": 0.995433789954338,
+  "f1_max_threshold": 0.5403228402137756,
+  "val_threshold": null,
+  "n_val": 0,
+  "per_defect_auroc": {
+    "crack": 0.998109640831758,
+    "faulty_imprint": 1.0,
+    "poke": 0.9979296066252589,
+    "scratch": 1.0,
+    "squeeze": 1.0
+  },
+  "pixel_auroc": 0.9931565184477098,
+  "aupro_30": 0.9702399722729237
+}

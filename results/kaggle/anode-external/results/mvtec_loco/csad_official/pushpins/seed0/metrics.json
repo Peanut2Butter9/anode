@@ -1,0 +1,41 @@
+{
+  "dataset": "mvtec_loco",
+  "category": "pushpins",
+  "model": "csad_official",
+  "seed": 0,
+  "image_size": 256,
+  "n_val": 69,
+  "n_test": 310,
+  "fit_seconds": 0.0,
+  "test_seconds_total": 51.02446757300015,
+  "latency": {
+    "ms_per_image_mean": 61.99403387213948,
+    "ms_per_image_std": 1.8237935457783714,
+    "n": 305
+  },
+  "checkpoint": "pushpins.pth",
+  "note": "released checkpoint; the official training script keeps the iteration with the best test AUROC. CSAD also uses the validation split to normalise its scores.",
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9714779238287832,
+  "f1_max": 0.9212827988338192,
+  "f1_max_threshold": 4.23563289642334,
+  "val_threshold": {
+    "threshold": 6.552247361532915,
+    "accuracy": 0.8870967741935484,
+    "precision": 0.959731543624161,
+    "recall": 0.8313953488372093,
+    "f1": 0.8909657320872274,
+    "tp": 143,
+    "tn": 132,
+    "fp": 6,
+    "fn": 29
+  },
+  "per_defect_auroc": {
+    "logical_anomalies": 0.9972129319955407,
+    "structural_anomalies": 0.9425657541599569
+  },
+  "image_auroc_logical": 0.9972129319955407,
+  "image_auroc_structural": 0.9425657541599569
+}

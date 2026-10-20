@@ -1,0 +1,39 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "toothbrush",
+  "model": "patchcore",
+  "seed": 0,
+  "image_size": 256,
+  "n_train": 54,
+  "n_val": 6,
+  "n_test": 42,
+  "fit_seconds": 4.290048277001915,
+  "test_seconds_total": 1.7111226109991549,
+  "latency": {
+    "ms_per_image_mean": 14.317845599968374,
+    "ms_per_image_std": 1.3868139050185255,
+    "n": 30
+  },
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9277777777777778,
+  "f1_max": 0.9375,
+  "f1_max_threshold": 1.4988913536071777,
+  "val_threshold": {
+    "threshold": 1.6917845010757446,
+    "accuracy": 0.8571428571428571,
+    "precision": 0.9,
+    "recall": 0.9,
+    "f1": 0.9,
+    "tp": 27,
+    "tn": 9,
+    "fp": 3,
+    "fn": 3
+  },
+  "per_defect_auroc": {
+    "defective": 0.9277777777777778
+  },
+  "pixel_auroc": 0.9890166871774626,
+  "aupro_30": 0.886576164523573
+}

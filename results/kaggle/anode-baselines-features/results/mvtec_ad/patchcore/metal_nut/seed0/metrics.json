@@ -1,0 +1,42 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "metal_nut",
+  "model": "patchcore",
+  "seed": 0,
+  "image_size": 256,
+  "n_train": 198,
+  "n_val": 22,
+  "n_test": 115,
+  "fit_seconds": 30.559272688999044,
+  "test_seconds_total": 4.471698917001049,
+  "latency": {
+    "ms_per_image_mean": 32.2288034332208,
+    "ms_per_image_std": 0.5648441439080437,
+    "n": 30
+  },
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9975562072336266,
+  "f1_max": 0.9893617021276596,
+  "f1_max_threshold": 1.9404034614562988,
+  "val_threshold": {
+    "threshold": 2.080660343170166,
+    "accuracy": 0.9478260869565217,
+    "precision": 1.0,
+    "recall": 0.9354838709677419,
+    "f1": 0.9666666666666666,
+    "tp": 87,
+    "tn": 22,
+    "fp": 0,
+    "fn": 6
+  },
+  "per_defect_auroc": {
+    "bent": 0.9963636363636363,
+    "color": 0.9979338842975207,
+    "flip": 1.0,
+    "scratch": 0.9960474308300395
+  },
+  "pixel_auroc": 0.9889119621022456,
+  "aupro_30": 0.9418988827150647
+}

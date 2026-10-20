@@ -1,0 +1,34 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "metal_nut",
+  "model": "glass_official",
+  "seed": 0,
+  "image_size": 288,
+  "n_test": 115,
+  "fit_seconds": 0.0,
+  "test_seconds_total": 10.43365865599992,
+  "latency": {
+    "ms_per_image_mean": 28.882500266661282,
+    "ms_per_image_std": 0.5661341060517994,
+    "n": 30
+  },
+  "checkpoint": "ckpt_best_5.pth",
+  "best_epoch": 5,
+  "note": "released checkpoint; the official training script keeps the epoch with the best test AUROC",
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 1.0,
+  "f1_max": 1.0,
+  "f1_max_threshold": 0.7905334234237671,
+  "val_threshold": null,
+  "n_val": 0,
+  "per_defect_auroc": {
+    "bent": 1.0,
+    "color": 1.0,
+    "flip": 1.0,
+    "scratch": 1.0
+  },
+  "pixel_auroc": 0.9939300114844436,
+  "aupro_30": 0.9491516298515555
+}

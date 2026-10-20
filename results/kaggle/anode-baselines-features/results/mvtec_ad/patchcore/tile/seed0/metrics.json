@@ -1,0 +1,43 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "tile",
+  "model": "patchcore",
+  "seed": 0,
+  "image_size": 256,
+  "n_train": 207,
+  "n_val": 23,
+  "n_test": 117,
+  "fit_seconds": 35.726637849002145,
+  "test_seconds_total": 4.874288984003215,
+  "latency": {
+    "ms_per_image_mean": 31.777041666646255,
+    "ms_per_image_std": 0.3488727258788652,
+    "n": 30
+  },
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9996392496392497,
+  "f1_max": 0.9940828402366864,
+  "f1_max_threshold": 1.8034417629241943,
+  "val_threshold": {
+    "threshold": 1.8483200073242188,
+    "accuracy": 0.9829059829059829,
+    "precision": 0.9880952380952381,
+    "recall": 0.9880952380952381,
+    "f1": 0.9880952380952381,
+    "tp": 83,
+    "tn": 32,
+    "fp": 1,
+    "fn": 1
+  },
+  "per_defect_auroc": {
+    "crack": 1.0,
+    "glue_strip": 1.0,
+    "gray_stroke": 0.9981060606060607,
+    "oil": 1.0,
+    "rough": 1.0
+  },
+  "pixel_auroc": 0.961127150456848,
+  "aupro_30": 0.8637177070871279
+}

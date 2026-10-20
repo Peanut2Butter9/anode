@@ -1,0 +1,35 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "screw",
+  "model": "glass_official",
+  "seed": 0,
+  "image_size": 288,
+  "n_test": 160,
+  "fit_seconds": 0.0,
+  "test_seconds_total": 14.275795323000011,
+  "latency": {
+    "ms_per_image_mean": 28.811093000009198,
+    "ms_per_image_std": 0.4327306102154357,
+    "n": 30
+  },
+  "checkpoint": "ckpt_best_139.pth",
+  "best_epoch": 139,
+  "note": "released checkpoint; the official training script keeps the epoch with the best test AUROC",
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9997950399672064,
+  "f1_max": 0.99581589958159,
+  "f1_max_threshold": 0.4407126009464264,
+  "val_threshold": null,
+  "n_val": 0,
+  "per_defect_auroc": {
+    "manipulated_front": 0.9989837398373984,
+    "scratch_head": 1.0,
+    "scratch_neck": 1.0,
+    "thread_side": 1.0,
+    "thread_top": 1.0
+  },
+  "pixel_auroc": 0.9944289367279048,
+  "aupro_30": 0.9705325811153972
+}

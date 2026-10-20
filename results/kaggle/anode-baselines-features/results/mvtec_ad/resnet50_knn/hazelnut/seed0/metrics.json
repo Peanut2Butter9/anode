@@ -1,0 +1,40 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "hazelnut",
+  "model": "resnet50_knn",
+  "seed": 0,
+  "image_size": 256,
+  "n_train": 352,
+  "n_val": 39,
+  "n_test": 110,
+  "fit_seconds": 15.362307519000751,
+  "test_seconds_total": 4.680305622998276,
+  "latency": {
+    "ms_per_image_mean": 8.596704766629651,
+    "ms_per_image_std": 0.980365333108067,
+    "n": 30
+  },
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9025,
+  "f1_max": 0.8947368421052632,
+  "f1_max_threshold": 3.5790441036224365,
+  "val_threshold": {
+    "threshold": 5.075033187866211,
+    "accuracy": 0.5636363636363636,
+    "precision": 1.0,
+    "recall": 0.3142857142857143,
+    "f1": 0.4782608695652174,
+    "tp": 22,
+    "tn": 40,
+    "fp": 0,
+    "fn": 48
+  },
+  "per_defect_auroc": {
+    "crack": 0.9458333333333333,
+    "cut": 0.8882352941176471,
+    "hole": 0.9194444444444445,
+    "print": 0.8529411764705883
+  }
+}

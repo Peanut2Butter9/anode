@@ -1,0 +1,43 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "grid",
+  "model": "patchcore",
+  "seed": 0,
+  "image_size": 256,
+  "n_train": 238,
+  "n_val": 26,
+  "n_test": 78,
+  "fit_seconds": 43.83942043600109,
+  "test_seconds_total": 3.5027879509980266,
+  "latency": {
+    "ms_per_image_mean": 37.305788433150155,
+    "ms_per_image_std": 0.5856511998646782,
+    "n": 30
+  },
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9866332497911445,
+  "f1_max": 0.9824561403508771,
+  "f1_max_threshold": 1.5866800546646118,
+  "val_threshold": {
+    "threshold": 1.647729516029358,
+    "accuracy": 0.9230769230769231,
+    "precision": 0.9811320754716981,
+    "recall": 0.9122807017543859,
+    "f1": 0.9454545454545454,
+    "tp": 52,
+    "tn": 20,
+    "fp": 1,
+    "fn": 5
+  },
+  "per_defect_auroc": {
+    "bent": 1.0,
+    "broken": 1.0,
+    "glue": 0.9437229437229437,
+    "metal_contamination": 0.9956709956709956,
+    "thread": 0.9913419913419913
+  },
+  "pixel_auroc": 0.9799133367509568,
+  "aupro_30": 0.8936528099538693
+}

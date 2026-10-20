@@ -1,0 +1,46 @@
+{
+  "dataset": "mvtec_loco",
+  "category": "juice_bottle",
+  "model": "glass",
+  "seed": 0,
+  "image_size": 288,
+  "n_train": 335,
+  "n_val": 54,
+  "n_test": 330,
+  "epochs": 50,
+  "checkpoint_epoch": 49,
+  "eval_every": 5,
+  "svd": 1,
+  "fit_seconds": 4283.9210858530005,
+  "seconds_per_epoch": 85.67842171706,
+  "test_seconds_total": 13.615975892998904,
+  "latency": {
+    "ms_per_image_mean": 30.10146680001829,
+    "ms_per_image_std": 2.5640203822031116,
+    "n": 30
+  },
+  "note": "official GLASS code, last-epoch checkpoint",
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9565452578434908,
+  "f1_max": 0.9367088607594938,
+  "f1_max_threshold": 0.7126126289367676,
+  "val_threshold": {
+    "threshold": 0.9534031280864688,
+    "accuracy": 0.7848484848484848,
+    "precision": 1.0,
+    "recall": 0.6991525423728814,
+    "f1": 0.8229426433915211,
+    "tp": 165,
+    "tn": 94,
+    "fp": 0,
+    "fn": 71
+  },
+  "per_defect_auroc": {
+    "logical_anomalies": 0.9388672460293678,
+    "structural_anomalies": 0.9832503395201448
+  },
+  "image_auroc_logical": 0.9388672460293678,
+  "image_auroc_structural": 0.9832503395201448
+}

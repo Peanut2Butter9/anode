@@ -1,0 +1,45 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "zipper",
+  "model": "patchcore",
+  "seed": 0,
+  "image_size": 256,
+  "n_train": 216,
+  "n_val": 24,
+  "n_test": 151,
+  "fit_seconds": 35.97882443999697,
+  "test_seconds_total": 5.765490895999392,
+  "latency": {
+    "ms_per_image_mean": 34.47770466676351,
+    "ms_per_image_std": 0.39423485919153245,
+    "n": 30
+  },
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9834558823529412,
+  "f1_max": 0.9874476987447698,
+  "f1_max_threshold": 1.3828927278518677,
+  "val_threshold": {
+    "threshold": 1.3808788061141968,
+    "accuracy": 0.9801324503311258,
+    "precision": 0.9833333333333333,
+    "recall": 0.9915966386554622,
+    "f1": 0.9874476987447698,
+    "tp": 118,
+    "tn": 30,
+    "fp": 2,
+    "fn": 1
+  },
+  "per_defect_auroc": {
+    "broken_teeth": 0.9720394736842105,
+    "combined": 0.998046875,
+    "fabric_border": 1.0,
+    "fabric_interior": 0.9609375,
+    "rough": 0.9871323529411765,
+    "split_teeth": 0.9930555555555556,
+    "squeezed_teeth": 0.97265625
+  },
+  "pixel_auroc": 0.9860239938332821,
+  "aupro_30": 0.9476913247038973
+}

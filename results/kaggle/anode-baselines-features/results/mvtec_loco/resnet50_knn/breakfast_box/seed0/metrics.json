@@ -1,0 +1,40 @@
+{
+  "dataset": "mvtec_loco",
+  "category": "breakfast_box",
+  "model": "resnet50_knn",
+  "seed": 0,
+  "image_size": 256,
+  "n_train": 351,
+  "n_val": 62,
+  "n_test": 275,
+  "fit_seconds": 26.880728828997235,
+  "test_seconds_total": 18.78436217199851,
+  "latency": {
+    "ms_per_image_mean": 9.556777933539706,
+    "ms_per_image_std": 0.38868659108785814,
+    "n": 30
+  },
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.7988212626090899,
+  "f1_max": 0.8031088082901554,
+  "f1_max_threshold": 3.463991641998291,
+  "val_threshold": {
+    "threshold": 4.186090469360352,
+    "accuracy": 0.5963636363636363,
+    "precision": 0.9696969696969697,
+    "recall": 0.3699421965317919,
+    "f1": 0.5355648535564853,
+    "tp": 64,
+    "tn": 100,
+    "fp": 2,
+    "fn": 109
+  },
+  "per_defect_auroc": {
+    "logical_anomalies": 0.9101110323647531,
+    "structural_anomalies": 0.6961873638344226
+  },
+  "image_auroc_logical": 0.9101110323647531,
+  "image_auroc_structural": 0.6961873638344226
+}

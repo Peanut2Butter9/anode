@@ -1,0 +1,41 @@
+{
+  "dataset": "mvtec_loco",
+  "category": "screw_bag",
+  "model": "csad_official",
+  "seed": 0,
+  "image_size": 256,
+  "n_val": 60,
+  "n_test": 341,
+  "fit_seconds": 0.0,
+  "test_seconds_total": 57.860534315999985,
+  "latency": {
+    "ms_per_image_mean": 64.16160014881083,
+    "ms_per_image_std": 2.151030166451272,
+    "n": 336
+  },
+  "checkpoint": "screw_bag.pth",
+  "note": "released checkpoint; the official training script keeps the iteration with the best test AUROC. CSAD also uses the validation split to normalise its scores.",
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9781046485515382,
+  "f1_max": 0.958904109589041,
+  "f1_max_threshold": 4.517062187194824,
+  "val_threshold": {
+    "threshold": 15.452270856005175,
+    "accuracy": 0.8504398826979472,
+    "precision": 0.9941176470588236,
+    "recall": 0.771689497716895,
+    "f1": 0.8688946015424165,
+    "tp": 169,
+    "tn": 121,
+    "fp": 1,
+    "fn": 50
+  },
+  "per_defect_auroc": {
+    "logical_anomalies": 0.9988632284312552,
+    "structural_anomalies": 0.943422630947621
+  },
+  "image_auroc_logical": 0.9988632284312552,
+  "image_auroc_structural": 0.943422630947621
+}

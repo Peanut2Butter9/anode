@@ -1,0 +1,43 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "carpet",
+  "model": "patchcore",
+  "seed": 0,
+  "image_size": 256,
+  "n_train": 252,
+  "n_val": 28,
+  "n_test": 117,
+  "fit_seconds": 51.7324922250009,
+  "test_seconds_total": 5.4766798240016215,
+  "latency": {
+    "ms_per_image_mean": 36.56990380004572,
+    "ms_per_image_std": 1.0294907223175584,
+    "n": 30
+  },
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9883627608346709,
+  "f1_max": 0.9720670391061451,
+  "f1_max_threshold": 1.6576298475265503,
+  "val_threshold": {
+    "threshold": 1.4711520671844482,
+    "accuracy": 0.905982905982906,
+    "precision": 0.8979591836734694,
+    "recall": 0.9887640449438202,
+    "f1": 0.9411764705882354,
+    "tp": 88,
+    "tn": 18,
+    "fp": 10,
+    "fn": 1
+  },
+  "per_defect_auroc": {
+    "color": 1.0,
+    "cut": 1.0,
+    "hole": 0.9957983193277311,
+    "metal_contamination": 0.9726890756302521,
+    "thread": 0.9736842105263158
+  },
+  "pixel_auroc": 0.9902812387039703,
+  "aupro_30": 0.9467023108311922
+}

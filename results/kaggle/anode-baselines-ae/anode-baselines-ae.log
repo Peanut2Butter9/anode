@@ -1,0 +1,131 @@
+[{"stream_name":"stdout","time":15.000016737,"data":"mvtec_ad: /kaggle/input/datasets/mhasbiarz/mvtec-anomaly-detection/mvtec_anomaly_detection\n"}
+,{"stream_name":"stdout","time":15.000063586,"data":"mvtec_loco: /kaggle/input/notebooks/mhasbiarz/anode-data/mvtec_loco\n"}
+,{"stream_name":"stdout","time":15.255172962,"data":"device: cuda\n"}
+,{"stream_name":"stdout","time":202.550390646,"data":"mvtec_ad/bottle autoencoder_l2 seed0: I-AUROC 0.7298  P-AUROC 0.7209  AUPRO 0.4090  fit 180s  7.5 ms/img\n"}
+,{"stream_name":"stdout","time":382.030645014,"data":"mvtec_ad/bottle autoencoder_l2 seed1: I-AUROC 0.7405  P-AUROC 0.7043  AUPRO 0.4033  fit 173s  7.6 ms/img\n"}
+,{"stream_name":"stdout","time":561.525987216,"data":"mvtec_ad/bottle autoencoder_l2 seed2: I-AUROC 0.7103  P-AUROC 0.6718  AUPRO 0.3634  fit 173s  7.5 ms/img\n"}
+,{"stream_name":"stdout","time":767.579875315,"data":"mvtec_ad/cable autoencoder_l2 seed0: I-AUROC 0.4854  P-AUROC 0.4621  AUPRO 0.2316  fit 192s  8.5 ms/img\n"}
+,{"stream_name":"stdout","time":971.479307491,"data":"mvtec_ad/cable autoencoder_l2 seed1: I-AUROC 0.4906  P-AUROC 0.4578  AUPRO 0.2284  fit 190s  8.2 ms/img\n"}
+,{"stream_name":"stdout","time":1174.713169326,"data":"mvtec_ad/cable autoencoder_l2 seed2: I-AUROC 0.4865  P-AUROC 0.4653  AUPRO 0.2367  fit 190s  8.3 ms/img\n"}
+,{"stream_name":"stdout","time":1371.525224813,"data":"mvtec_ad/capsule autoencoder_l2 seed0: I-AUROC 0.6442  P-AUROC 0.8007  AUPRO 0.5607  fit 184s  8.0 ms/img\n"}
+,{"stream_name":"stdout","time":1566.339965927,"data":"mvtec_ad/capsule autoencoder_l2 seed1: I-AUROC 0.6223  P-AUROC 0.7671  AUPRO 0.5339  fit 183s  7.7 ms/img\n"}
+,{"stream_name":"stdout","time":1760.878626185,"data":"mvtec_ad/capsule autoencoder_l2 seed2: I-AUROC 0.6741  P-AUROC 0.7334  AUPRO 0.5328  fit 183s  7.8 ms/img\n"}
+,{"stream_name":"stdout","time":2009.739474111,"data":"mvtec_ad/carpet autoencoder_l2 seed0: I-AUROC 0.3756  P-AUROC 0.7542  AUPRO 0.2809  fit 237s  7.7 ms/img\n"}
+,{"stream_name":"stdout","time":2256.650232778,"data":"mvtec_ad/carpet autoencoder_l2 seed1: I-AUROC 0.3736  P-AUROC 0.7373  AUPRO 0.2682  fit 236s  8.0 ms/img\n"}
+,{"stream_name":"stdout","time":2504.013924261,"data":"mvtec_ad/carpet autoencoder_l2 seed2: I-AUROC 0.3648  P-AUROC 0.6567  AUPRO 0.2452  fit 236s  8.3 ms/img\n"}
+,{"stream_name":"stdout","time":2729.672749369,"data":"mvtec_ad/grid autoencoder_l2 seed0: I-AUROC 0.8705  P-AUROC 0.8670  AUPRO 0.6070  fit 219s  8.1 ms/img\n"}
+,{"stream_name":"stdout","time":2953.323706505,"data":"mvtec_ad/grid autoencoder_l2 seed1: I-AUROC 0.8747  P-AUROC 0.8367  AUPRO 0.5401  fit 217s  7.5 ms/img\n"}
+,{"stream_name":"stdout","time":3177.078262855,"data":"mvtec_ad/grid autoencoder_l2 seed2: I-AUROC 0.8889  P-AUROC 0.8431  AUPRO 0.5554  fit 218s  7.5 ms/img\n"}
+,{"stream_name":"stdout","time":3516.696933387,"data":"mvtec_ad/hazelnut autoencoder_l2 seed0: I-AUROC 0.9139  P-AUROC 0.9388  AUPRO 0.8591  fit 328s  7.5 ms/img\n"}
+,{"stream_name":"stdout","time":3854.512892085,"data":"mvtec_ad/hazelnut autoencoder_l2 seed1: I-AUROC 0.9143  P-AUROC 0.9364  AUPRO 0.8496  fit 327s  9.0 ms/img\n"}
+,{"stream_name":"stdout","time":4192.433531313,"data":"mvtec_ad/hazelnut autoencoder_l2 seed2: I-AUROC 0.9029  P-AUROC 0.9374  AUPRO 0.8547  fit 327s  8.1 ms/img\n"}
+,{"stream_name":"stdout","time":4411.030280898,"data":"mvtec_ad/leather autoencoder_l2 seed0: I-AUROC 0.3998  P-AUROC 0.8824  AUPRO 0.7507  fit 207s  7.4 ms/img\n"}
+,{"stream_name":"stdout","time":4626.673168205,"data":"mvtec_ad/leather autoencoder_l2 seed1: I-AUROC 0.4154  P-AUROC 0.8812  AUPRO 0.7531  fit 205s  7.4 ms/img\n"}
+,{"stream_name":"stdout","time":4842.546315367,"data":"mvtec_ad/leather autoencoder_l2 seed2: I-AUROC 0.4076  P-AUROC 0.8720  AUPRO 0.7260  fit 205s  7.4 ms/img\n"}
+,{"stream_name":"stdout","time":5034.925934206,"data":"mvtec_ad/metal_nut autoencoder_l2 seed0: I-AUROC 0.2879  P-AUROC 0.5939  AUPRO 0.2639  fit 183s  7.5 ms/img\n"}
+,{"stream_name":"stdout","time":5225.98406128,"data":"mvtec_ad/metal_nut autoencoder_l2 seed1: I-AUROC 0.2957  P-AUROC 0.5936  AUPRO 0.2541  fit 183s  7.5 ms/img\n"}
+,{"stream_name":"stdout","time":5416.822604087,"data":"mvtec_ad/metal_nut autoencoder_l2 seed2: I-AUROC 0.3001  P-AUROC 0.5929  AUPRO 0.2612  fit 183s  7.8 ms/img\n"}
+,{"stream_name":"stdout","time":5652.005461604,"data":"mvtec_ad/pill autoencoder_l2 seed0: I-AUROC 0.5919  P-AUROC 0.8805  AUPRO 0.7078  fit 222s  7.5 ms/img\n"}
+,{"stream_name":"stdout","time":5884.87015544,"data":"mvtec_ad/pill autoencoder_l2 seed1: I-AUROC 0.6034  P-AUROC 0.8741  AUPRO 0.6947  fit 221s  7.4 ms/img\n"}
+,{"stream_name":"stdout","time":6116.523586212,"data":"mvtec_ad/pill autoencoder_l2 seed2: I-AUROC 0.5982  P-AUROC 0.8722  AUPRO 0.6986  fit 220s  7.4 ms/img\n"}
+,{"stream_name":"stdout","time":6394.338264866,"data":"mvtec_ad/screw autoencoder_l2 seed0: I-AUROC 0.7184  P-AUROC 0.9123  AUPRO 0.6954  fit 266s  7.6 ms/img\n"}
+,{"stream_name":"stdout","time":6669.175347691,"data":"mvtec_ad/screw autoencoder_l2 seed1: I-AUROC 0.6899  P-AUROC 0.9164  AUPRO 0.7098  fit 265s  7.5 ms/img\n"}
+,{"stream_name":"stdout","time":6944.062174244,"data":"mvtec_ad/screw autoencoder_l2 seed2: I-AUROC 0.7069  P-AUROC 0.9124  AUPRO 0.6974  fit 264s  7.5 ms/img\n"}
+,{"stream_name":"stdout","time":7146.639525404,"data":"mvtec_ad/tile autoencoder_l2 seed0: I-AUROC 0.7839  P-AUROC 0.5965  AUPRO 0.3644  fit 192s  7.4 ms/img\n"}
+,{"stream_name":"stdout","time":7345.985156676,"data":"mvtec_ad/tile autoencoder_l2 seed1: I-AUROC 0.7900  P-AUROC 0.6013  AUPRO 0.3937  fit 190s  7.4 ms/img\n"}
+,{"stream_name":"stdout","time":7545.251297835,"data":"mvtec_ad/tile autoencoder_l2 seed2: I-AUROC 0.7496  P-AUROC 0.5731  AUPRO 0.3532  fit 190s  7.4 ms/img\n"}
+,{"stream_name":"stdout","time":7602.646621956,"data":"mvtec_ad/toothbrush autoencoder_l2 seed0: I-AUROC 0.5639  P-AUROC 0.8608  AUPRO 0.6011  fit 52s  8.4 ms/img\n"}
+,{"stream_name":"stdout","time":7658.900323593,"data":"mvtec_ad/toothbrush autoencoder_l2 seed1: I-AUROC 0.5694  P-AUROC 0.8631  AUPRO 0.6060  fit 51s  8.4 ms/img\n"}
+,{"stream_name":"stdout","time":7715.248082966,"data":"mvtec_ad/toothbrush autoencoder_l2 seed2: I-AUROC 0.5667  P-AUROC 0.8580  AUPRO 0.5983  fit 51s  8.0 ms/img\n"}
+,{"stream_name":"stdout","time":7907.471734046,"data":"mvtec_ad/transistor autoencoder_l2 seed0: I-AUROC 0.4738  P-AUROC 0.5494  AUPRO 0.2961  fit 181s  8.6 ms/img\n"}
+,{"stream_name":"stdout","time":8097.822828651,"data":"mvtec_ad/transistor autoencoder_l2 seed1: I-AUROC 0.4725  P-AUROC 0.5530  AUPRO 0.2920  fit 181s  8.0 ms/img\n"}
+,{"stream_name":"stdout","time":8288.281324625,"data":"mvtec_ad/transistor autoencoder_l2 seed2: I-AUROC 0.4737  P-AUROC 0.5540  AUPRO 0.2893  fit 181s  8.3 ms/img\n"}
+,{"stream_name":"stdout","time":8505.325400144,"data":"mvtec_ad/wood autoencoder_l2 seed0: I-AUROC 0.9395  P-AUROC 0.7985  AUPRO 0.6876  fit 208s  9.2 ms/img\n"}
+,{"stream_name":"stdout","time":8719.89657944,"data":"mvtec_ad/wood autoencoder_l2 seed1: I-AUROC 0.9465  P-AUROC 0.7876  AUPRO 0.6794  fit 206s  7.6 ms/img\n"}
+,{"stream_name":"stdout","time":8934.648746582,"data":"mvtec_ad/wood autoencoder_l2 seed2: I-AUROC 0.9360  P-AUROC 0.7822  AUPRO 0.6754  fit 206s  9.5 ms/img\n"}
+,{"stream_name":"stdout","time":9144.326502748,"data":"mvtec_ad/zipper autoencoder_l2 seed0: I-AUROC 0.3086  P-AUROC 0.7831  AUPRO 0.4328  fit 199s  8.3 ms/img\n"}
+,{"stream_name":"stdout","time":9352.398624584,"data":"mvtec_ad/zipper autoencoder_l2 seed1: I-AUROC 0.2904  P-AUROC 0.7780  AUPRO 0.4306  fit 198s  7.5 ms/img\n"}
+,{"stream_name":"stdout","time":9559.169674287,"data":"mvtec_ad/zipper autoencoder_l2 seed2: I-AUROC 0.3051  P-AUROC 0.7819  AUPRO 0.4322  fit 197s  7.5 ms/img\n"}
+,{"stream_name":"stdout","time":9559.195020287,"data":"device: cuda\n"}
+,{"stream_name":"stdout","time":9924.218291231,"data":"mvtec_loco/breakfast_box autoencoder_l2 seed0: I-AUROC 0.6273  (logical 0.5318, structural 0.7154)  fit 339s  12.6 ms/img\n"}
+,{"stream_name":"stdout","time":10285.798224988,"data":"mvtec_loco/breakfast_box autoencoder_l2 seed1: I-AUROC 0.6364  (logical 0.5437, structural 0.7219)  fit 338s  12.7 ms/img\n"}
+,{"stream_name":"stdout","time":10648.265299761,"data":"mvtec_loco/breakfast_box autoencoder_l2 seed2: I-AUROC 0.6156  (logical 0.5201, structural 0.7036)  fit 340s  12.6 ms/img\n"}
+,{"stream_name":"stdout","time":10982.180244257,"data":"mvtec_loco/juice_bottle autoencoder_l2 seed0: I-AUROC 0.6397  (logical 0.5895, structural 0.7156)  fit 315s  9.0 ms/img\n"}
+,{"stream_name":"stdout","time":11310.51922234,"data":"mvtec_loco/juice_bottle autoencoder_l2 seed1: I-AUROC 0.6605  (logical 0.6000, structural 0.7519)  fit 313s  8.5 ms/img\n"}
+,{"stream_name":"stdout","time":11640.251646156,"data":"mvtec_loco/juice_bottle autoencoder_l2 seed2: I-AUROC 0.6403  (logical 0.5905, structural 0.7155)  fit 314s  8.4 ms/img\n"}
+,{"stream_name":"stdout","time":12017.417273675,"data":"mvtec_loco/pushpins autoencoder_l2 seed0: I-AUROC 0.6512  (logical 0.5096, structural 0.8103)  fit 355s  11.1 ms/img\n"}
+,{"stream_name":"stdout","time":12391.606625983,"data":"mvtec_loco/pushpins autoencoder_l2 seed1: I-AUROC 0.6309  (logical 0.5033, structural 0.7744)  fit 354s  10.8 ms/img\n"}
+,{"stream_name":"stdout","time":12765.414726987,"data":"mvtec_loco/pushpins autoencoder_l2 seed2: I-AUROC 0.6496  (logical 0.5057, structural 0.8112)  fit 354s  10.4 ms/img\n"}
+,{"stream_name":"stdout","time":13133.706591376,"data":"mvtec_loco/screw_bag autoencoder_l2 seed0: I-AUROC 0.6932  (logical 0.6596, structural 0.7494)  fit 344s  11.0 ms/img\n"}
+,{"stream_name":"stdout","time":13496.138113528,"data":"mvtec_loco/screw_bag autoencoder_l2 seed1: I-AUROC 0.6940  (logical 0.6568, structural 0.7562)  fit 342s  10.6 ms/img\n"}
+,{"stream_name":"stdout","time":13859.591049503,"data":"mvtec_loco/screw_bag autoencoder_l2 seed2: I-AUROC 0.6774  (logical 0.6410, structural 0.7383)  fit 342s  10.8 ms/img\n"}
+,{"stream_name":"stdout","time":14226.945172118,"data":"mvtec_loco/splicing_connectors autoencoder_l2 seed0: I-AUROC 0.6779  (logical 0.6571, structural 0.7044)  fit 346s  10.6 ms/img\n"}
+,{"stream_name":"stdout","time":14589.77420748,"data":"mvtec_loco/splicing_connectors autoencoder_l2 seed1: I-AUROC 0.6756  (logical 0.6509, structural 0.7069)  fit 345s  10.3 ms/img\n"}
+,{"stream_name":"stdout","time":14951.179208214,"data":"mvtec_loco/splicing_connectors autoencoder_l2 seed2: I-AUROC 0.6663  (logical 0.6457, structural 0.6926)  fit 344s  10.0 ms/img\n"}
+,{"stream_name":"stdout","time":14951.221581981,"data":"mvtec_ad  autoencoder_l2  bottle  0  0.7298  None  None  0.7209  0.4090  0.8630  0.4217  0.3846  179.6544  7.4583  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.221610587,"data":"mvtec_ad  autoencoder_l2  bottle  1  0.7405  None  None  0.7043  0.4033  0.8630  0.4096  0.3636  172.7653  7.5982  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.221617782,"data":"mvtec_ad  autoencoder_l2  bottle  2  0.7103  None  None  0.6718  0.3634  0.8630  0.3735  0.2973  172.6856  7.4745  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.221623352,"data":"mvtec_ad  autoencoder_l2  cable  0  0.4854  None  None  0.4621  0.2316  0.7603  0.3867  0.0000  191.5244  8.5049  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.221629283,"data":"mvtec_ad  autoencoder_l2  cable  1  0.4906  None  None  0.4578  0.2284  0.7603  0.3867  0.0000  190.0141  8.2340  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.221635113,"data":"mvtec_ad  autoencoder_l2  cable  2  0.4865  None  None  0.4653  0.2367  0.7603  0.3867  0.0000  189.5596  8.2651  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.221653646,"data":"mvtec_ad  autoencoder_l2  capsule  0  0.6442  None  None  0.8007  0.5607  0.9046  0.1742  0.0000  184.4615  7.9741  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.221659039,"data":"mvtec_ad  autoencoder_l2  capsule  1  0.6223  None  None  0.7671  0.5339  0.9046  0.1742  0.0000  183.3147  7.7378  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.221669425,"data":"mvtec_ad  autoencoder_l2  capsule  2  0.6741  None  None  0.7334  0.5328  0.9121  0.1742  0.0000  182.9876  7.7588  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.221674114,"data":"mvtec_ad  autoencoder_l2  carpet  0  0.3756  None  None  0.7542  0.2809  0.8641  0.2821  0.2881  236.9516  7.7469  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.221678328,"data":"mvtec_ad  autoencoder_l2  carpet  1  0.3736  None  None  0.7373  0.2682  0.8641  0.2821  0.2881  235.8304  7.9549  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.221682526,"data":"mvtec_ad  autoencoder_l2  carpet  2  0.3648  None  None  0.6567  0.2452  0.8641  0.2821  0.2881  236.3463  8.3026  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.221688295,"data":"mvtec_ad  autoencoder_l2  grid  0  0.8705  None  None  0.8670  0.6070  0.9107  0.2692  0.0000  219.0216  8.0544  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.221709845,"data":"mvtec_ad  autoencoder_l2  grid  1  0.8747  None  None  0.8367  0.5401  0.9167  0.2692  0.0000  217.1794  7.5373  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.221714758,"data":"mvtec_ad  autoencoder_l2  grid  2  0.8889  None  None  0.8431  0.5554  0.9310  0.2692  0.0000  217.5665  7.4974  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.221771379,"data":"mvtec_ad  autoencoder_l2  hazelnut  0  0.9139  None  None  0.9388  0.8591  0.8800  0.5364  0.4270  328.3790  7.4933  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.221777808,"data":"mvtec_ad  autoencoder_l2  hazelnut  1  0.9143  None  None  0.9364  0.8496  0.8742  0.5364  0.4270  327.2324  8.9611  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.221782213,"data":"mvtec_ad  autoencoder_l2  hazelnut  2  0.9029  None  None  0.9374  0.8547  0.8758  0.5364  0.4270  327.3516  8.0760  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.221786309,"data":"mvtec_ad  autoencoder_l2  leather  0  0.3998  None  None  0.8824  0.7507  0.8519  0.6048  0.7407  206.5259  7.3912  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.221944814,"data":"mvtec_ad  autoencoder_l2  leather  1  0.4154  None  None  0.8812  0.7531  0.8519  0.6048  0.7407  205.0296  7.4306  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.221959037,"data":"mvtec_ad  autoencoder_l2  leather  2  0.4076  None  None  0.8720  0.7260  0.8519  0.6048  0.7407  205.3171  7.3618  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.22196363,"data":"mvtec_ad  autoencoder_l2  metal_nut  0  0.2879  None  None  0.5939  0.2639  0.8942  0.1913  0.0000  183.2545  7.4556  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.221968221,"data":"mvtec_ad  autoencoder_l2  metal_nut  1  0.2957  None  None  0.5936  0.2541  0.8942  0.1913  0.0000  183.2795  7.4793  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.221972499,"data":"mvtec_ad  autoencoder_l2  metal_nut  2  0.3001  None  None  0.5929  0.2612  0.8942  0.1913  0.0000  183.0597  7.8259  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.221976378,"data":"mvtec_ad  autoencoder_l2  pill  0  0.5919  None  None  0.8805  0.7078  0.9298  0.1856  0.1169  221.6686  7.4683  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.221980503,"data":"mvtec_ad  autoencoder_l2  pill  1  0.6034  None  None  0.8741  0.6947  0.9298  0.1856  0.1169  221.3150  7.4018  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.221984672,"data":"mvtec_ad  autoencoder_l2  pill  2  0.5982  None  None  0.8722  0.6986  0.9293  0.1856  0.1169  220.2344  7.3852  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.221997335,"data":"mvtec_ad  autoencoder_l2  screw  0  0.7184  None  None  0.9123  0.6954  0.8790  0.2562  0.0000  266.2687  7.6119  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222001802,"data":"mvtec_ad  autoencoder_l2  screw  1  0.6899  None  None  0.9164  0.7098  0.8745  0.2562  0.0000  264.5249  7.4546  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222005721,"data":"mvtec_ad  autoencoder_l2  screw  2  0.7069  None  None  0.9124  0.6974  0.8769  0.2562  0.0000  264.4592  7.4886  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222009509,"data":"mvtec_ad  autoencoder_l2  tile  0  0.7839  None  None  0.5965  0.3644  0.8508  0.2906  0.0235  192.0823  7.3818  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222014007,"data":"mvtec_ad  autoencoder_l2  tile  1  0.7900  None  None  0.6013  0.3937  0.8400  0.2906  0.0235  189.7199  7.3851  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222020516,"data":"mvtec_ad  autoencoder_l2  tile  2  0.7496  None  None  0.5731  0.3532  0.8415  0.2821  0.0000  189.5719  7.3828  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222075394,"data":"mvtec_ad  autoencoder_l2  toothbrush  0  0.5639  None  None  0.8608  0.6011  0.8333  0.2857  0.0000  51.8310  8.4283  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.22208317,"data":"mvtec_ad  autoencoder_l2  toothbrush  1  0.5694  None  None  0.8631  0.6060  0.8333  0.2857  0.0000  51.0680  8.3825  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222087752,"data":"mvtec_ad  autoencoder_l2  toothbrush  2  0.5667  None  None  0.8580  0.5983  0.8333  0.2857  0.0000  51.2036  7.9544  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222091283,"data":"mvtec_ad  autoencoder_l2  transistor  0  0.4738  None  None  0.5494  0.2961  0.5714  0.6200  0.1364  181.3686  8.5623  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222094909,"data":"mvtec_ad  autoencoder_l2  transistor  1  0.4725  None  None  0.5530  0.2920  0.5714  0.6100  0.1333  180.6647  7.9710  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222098682,"data":"mvtec_ad  autoencoder_l2  transistor  2  0.4737  None  None  0.5540  0.2893  0.5714  0.6200  0.1364  180.6825  8.3346  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222102764,"data":"mvtec_ad  autoencoder_l2  wood  0  0.9395  None  None  0.7985  0.6876  0.9516  0.3291  0.2090  207.6398  9.2220  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222106225,"data":"mvtec_ad  autoencoder_l2  wood  1  0.9465  None  None  0.7876  0.6794  0.9516  0.3038  0.1538  205.8582  7.5671  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222150747,"data":"mvtec_ad  autoencoder_l2  wood  2  0.9360  None  None  0.7822  0.6754  0.9516  0.3291  0.2090  206.2030  9.5384  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222159353,"data":"mvtec_ad  autoencoder_l2  zipper  0  0.3086  None  None  0.7831  0.4328  0.8815  0.2185  0.0167  198.6792  8.3094  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222163838,"data":"mvtec_ad  autoencoder_l2  zipper  1  0.2904  None  None  0.7780  0.4306  0.8815  0.2119  0.0000  198.0666  7.4620  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222178047,"data":"mvtec_ad  autoencoder_l2  zipper  2  0.3051  None  None  0.7819  0.4322  0.8815  0.2185  0.0167  197.1698  7.4717  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222191029,"data":"mvtec_loco  autoencoder_l2  breakfast_box  0  0.6273  0.5318  0.7154  None  None  0.7723  0.4618  0.2952  339.1428  12.6287  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222195375,"data":"mvtec_loco  autoencoder_l2  breakfast_box  1  0.6364  0.5437  0.7219  None  None  0.7723  0.4691  0.2913  338.4264  12.6989  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222362942,"data":"mvtec_loco  autoencoder_l2  breakfast_box  2  0.6156  0.5201  0.7036  None  None  0.7723  0.4800  0.3644  339.6345  12.6201  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222383131,"data":"mvtec_loco  autoencoder_l2  juice_bottle  0  0.6397  0.5895  0.7156  None  None  0.8339  0.4091  0.3011  315.2563  9.0002  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222387962,"data":"mvtec_loco  autoencoder_l2  juice_bottle  1  0.6605  0.6000  0.7519  None  None  0.8339  0.4152  0.3132  312.9296  8.4900  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222391857,"data":"mvtec_loco  autoencoder_l2  juice_bottle  2  0.6403  0.5905  0.7155  None  None  0.8339  0.4030  0.2836  314.4478  8.4119  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222396355,"data":"mvtec_loco  autoencoder_l2  pushpins  0  0.6512  0.5096  0.8103  None  None  0.7137  0.4968  0.1875  354.7911  11.0970  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222400687,"data":"mvtec_loco  autoencoder_l2  pushpins  1  0.6309  0.5033  0.7744  None  None  0.7137  0.4968  0.1875  354.4569  10.8328  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222404129,"data":"mvtec_loco  autoencoder_l2  pushpins  2  0.6496  0.5057  0.8112  None  None  0.7137  0.5032  0.2062  354.1120  10.4455  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222407614,"data":"mvtec_loco  autoencoder_l2  screw_bag  0  0.6932  0.6596  0.7494  None  None  0.7835  0.3724  0.0446  344.2110  11.0218  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222411067,"data":"mvtec_loco  autoencoder_l2  screw_bag  1  0.6940  0.6568  0.7562  None  None  0.7839  0.3695  0.0359  341.7944  10.6127  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222463112,"data":"mvtec_loco  autoencoder_l2  screw_bag  2  0.6774  0.6410  0.7383  None  None  0.7835  0.3724  0.0446  342.1337  10.8394  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.22246979,"data":"mvtec_loco  autoencoder_l2  splicing_connectors  0  0.6779  0.6571  0.7044  None  None  0.7741  0.4038  0.0792  346.0172  10.6157  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222473771,"data":"mvtec_loco  autoencoder_l2  splicing_connectors  1  0.6756  0.6509  0.7069  None  None  0.7715  0.4071  0.0887  344.8940  10.2767  Tesla T4\n"}
+,{"stream_name":"stdout","time":14951.222477712,"data":"mvtec_loco  autoencoder_l2  splicing_connectors  2  0.6663  0.6457  0.6926  None  None  0.7708  0.4167  0.1078  343.6869  10.0170  Tesla T4\n"}
+,{"stream_name":"stderr","time":14957.730207179,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":14957.73023954,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":14958.009222631,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":14958.009253367,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":14958.759222194,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":14959.78980975,"data":"[NbConvertApp] Writing 275797 bytes to __results__.html\n"}
+]

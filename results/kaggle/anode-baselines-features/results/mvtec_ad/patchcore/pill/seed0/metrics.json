@@ -1,0 +1,45 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "pill",
+  "model": "patchcore",
+  "seed": 0,
+  "image_size": 256,
+  "n_train": 240,
+  "n_val": 27,
+  "n_test": 167,
+  "fit_seconds": 45.37243430399758,
+  "test_seconds_total": 6.974031950998324,
+  "latency": {
+    "ms_per_image_mean": 35.809367166560456,
+    "ms_per_image_std": 0.5366896895790227,
+    "n": 30
+  },
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.953900709219858,
+  "f1_max": 0.9547038327526133,
+  "f1_max_threshold": 1.6070995330810547,
+  "val_threshold": {
+    "threshold": 2.002009868621826,
+    "accuracy": 0.5748502994011976,
+    "precision": 1.0,
+    "recall": 0.49645390070921985,
+    "f1": 0.6635071090047393,
+    "tp": 70,
+    "tn": 26,
+    "fp": 0,
+    "fn": 71
+  },
+  "per_defect_auroc": {
+    "color": 0.943076923076923,
+    "combined": 0.995475113122172,
+    "contamination": 0.9835164835164835,
+    "crack": 0.8535502958579883,
+    "faulty_imprint": 0.9858299595141701,
+    "pill_type": 1.0,
+    "scratch": 0.9759615384615385
+  },
+  "pixel_auroc": 0.9819377383280764,
+  "aupro_30": 0.9422499727726837
+}

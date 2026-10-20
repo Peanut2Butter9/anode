@@ -1,0 +1,40 @@
+{
+  "dataset": "mvtec_loco",
+  "category": "splicing_connectors",
+  "model": "resnet50_knn",
+  "seed": 0,
+  "image_size": 256,
+  "n_train": 360,
+  "n_val": 60,
+  "n_test": 312,
+  "fit_seconds": 19.799616725002124,
+  "test_seconds_total": 15.365853748000518,
+  "latency": {
+    "ms_per_image_mean": 9.38313086674801,
+    "ms_per_image_std": 0.045606311305472276,
+    "n": 30
+  },
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.7633996603822876,
+  "f1_max": 0.7857142857142858,
+  "f1_max_threshold": 3.8085639476776123,
+  "val_threshold": {
+    "threshold": 4.888094425201416,
+    "accuracy": 0.48717948717948717,
+    "precision": 1.0,
+    "recall": 0.17098445595854922,
+    "f1": 0.2920353982300885,
+    "tp": 33,
+    "tn": 119,
+    "fp": 0,
+    "fn": 160
+  },
+  "per_defect_auroc": {
+    "logical_anomalies": 0.8071895424836601,
+    "structural_anomalies": 0.7077607513593673
+  },
+  "image_auroc_logical": 0.8071895424836601,
+  "image_auroc_structural": 0.7077607513593673
+}

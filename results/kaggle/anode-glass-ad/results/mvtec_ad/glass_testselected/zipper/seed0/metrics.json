@@ -1,0 +1,51 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "zipper",
+  "model": "glass_testselected",
+  "seed": 0,
+  "image_size": 288,
+  "n_train": 216,
+  "n_val": 24,
+  "n_test": 151,
+  "epochs": 50,
+  "checkpoint_epoch": 39,
+  "eval_every": 5,
+  "svd": 0,
+  "fit_seconds": 3745.2160926789998,
+  "seconds_per_epoch": 74.90432185358,
+  "test_seconds_total": 4.71731631900002,
+  "latency": {
+    "ms_per_image_mean": 27.60160513334995,
+    "ms_per_image_std": 0.34740007368114495,
+    "n": 30
+  },
+  "note": "ANALYSIS ONLY: epoch chosen by the official script on the test set",
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9981617647058824,
+  "f1_max": 0.9915254237288135,
+  "f1_max_threshold": 0.8902820944786072,
+  "val_threshold": {
+    "threshold": 0.6113315972846739,
+    "accuracy": 0.9735099337748344,
+    "precision": 0.9752066115702479,
+    "recall": 0.9915966386554622,
+    "f1": 0.9833333333333334,
+    "tp": 118,
+    "tn": 29,
+    "fp": 3,
+    "fn": 1
+  },
+  "per_defect_auroc": {
+    "broken_teeth": 1.0,
+    "combined": 1.0,
+    "fabric_border": 1.0,
+    "fabric_interior": 0.9921875,
+    "rough": 1.0,
+    "split_teeth": 1.0,
+    "squeezed_teeth": 0.994140625
+  },
+  "pixel_auroc": 0.9930975188158373,
+  "aupro_30": 0.9747956427541292
+}

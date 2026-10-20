@@ -1,0 +1,46 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "cable",
+  "model": "patchcore",
+  "seed": 0,
+  "image_size": 256,
+  "n_train": 202,
+  "n_val": 22,
+  "n_test": 150,
+  "fit_seconds": 34.23787574099697,
+  "test_seconds_total": 6.050191947000712,
+  "latency": {
+    "ms_per_image_mean": 31.330868133106076,
+    "ms_per_image_std": 1.1074253003552788,
+    "n": 30
+  },
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9934407796101948,
+  "f1_max": 0.9735449735449735,
+  "f1_max_threshold": 2.1505932807922363,
+  "val_threshold": {
+    "threshold": 2.324904441833496,
+    "accuracy": 0.9,
+    "precision": 0.9873417721518988,
+    "recall": 0.8478260869565217,
+    "f1": 0.9122807017543859,
+    "tp": 78,
+    "tn": 57,
+    "fp": 1,
+    "fn": 14
+  },
+  "per_defect_auroc": {
+    "bent_wire": 1.0,
+    "cable_swap": 0.9741379310344827,
+    "combined": 1.0,
+    "cut_inner_insulation": 0.9963054187192117,
+    "cut_outer_insulation": 0.996551724137931,
+    "missing_cable": 1.0,
+    "missing_wire": 0.9982758620689655,
+    "poke_insulation": 0.9810344827586206
+  },
+  "pixel_auroc": 0.9890111313502663,
+  "aupro_30": 0.9462855952923968
+}

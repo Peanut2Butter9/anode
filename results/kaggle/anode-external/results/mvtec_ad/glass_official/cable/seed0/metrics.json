@@ -1,0 +1,38 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "cable",
+  "model": "glass_official",
+  "seed": 0,
+  "image_size": 288,
+  "n_test": 150,
+  "fit_seconds": 0.0,
+  "test_seconds_total": 15.733772623999926,
+  "latency": {
+    "ms_per_image_mean": 33.53994580000214,
+    "ms_per_image_std": 4.651878675191481,
+    "n": 30
+  },
+  "checkpoint": "ckpt_best_72.pth",
+  "best_epoch": 72,
+  "note": "released checkpoint; the official training script keeps the epoch with the best test AUROC",
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9981259370314842,
+  "f1_max": 0.983957219251337,
+  "f1_max_threshold": 0.5775275230407715,
+  "val_threshold": null,
+  "n_val": 0,
+  "per_defect_auroc": {
+    "bent_wire": 1.0,
+    "cable_swap": 0.9913793103448276,
+    "combined": 1.0,
+    "cut_inner_insulation": 0.9963054187192119,
+    "cut_outer_insulation": 0.9982758620689655,
+    "missing_cable": 1.0,
+    "missing_wire": 1.0,
+    "poke_insulation": 1.0
+  },
+  "pixel_auroc": 0.9869965664436399,
+  "aupro_30": 0.9396439927360561
+}

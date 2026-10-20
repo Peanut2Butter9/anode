@@ -1,0 +1,35 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "carpet",
+  "model": "glass_official",
+  "seed": 0,
+  "image_size": 288,
+  "n_test": 117,
+  "fit_seconds": 0.0,
+  "test_seconds_total": 13.930808534999983,
+  "latency": {
+    "ms_per_image_mean": 34.029579200000626,
+    "ms_per_image_std": 4.588718763543144,
+    "n": 30
+  },
+  "checkpoint": "ckpt_best_431.pth",
+  "best_epoch": 431,
+  "note": "released checkpoint; the official training script keeps the epoch with the best test AUROC",
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9975922953451044,
+  "f1_max": 0.9886363636363636,
+  "f1_max_threshold": 0.9356606006622314,
+  "val_threshold": null,
+  "n_val": 0,
+  "per_defect_auroc": {
+    "color": 1.0,
+    "cut": 1.0,
+    "hole": 1.0,
+    "metal_contamination": 1.0,
+    "thread": 0.9887218045112782
+  },
+  "pixel_auroc": 0.9953347954072433,
+  "aupro_30": 0.9863054432621562
+}

@@ -1,0 +1,42 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "hazelnut",
+  "model": "patchcore",
+  "seed": 0,
+  "image_size": 256,
+  "n_train": 352,
+  "n_val": 39,
+  "n_test": 110,
+  "fit_seconds": 95.67031075699924,
+  "test_seconds_total": 6.738524617998337,
+  "latency": {
+    "ms_per_image_mean": 49.86427553327909,
+    "ms_per_image_std": 0.7487337017596009,
+    "n": 30
+  },
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 1.0,
+  "f1_max": 1.0,
+  "f1_max_threshold": 2.301480293273926,
+  "val_threshold": {
+    "threshold": 2.3972091674804688,
+    "accuracy": 0.9818181818181818,
+    "precision": 1.0,
+    "recall": 0.9714285714285714,
+    "f1": 0.9855072463768115,
+    "tp": 68,
+    "tn": 40,
+    "fp": 0,
+    "fn": 2
+  },
+  "per_defect_auroc": {
+    "crack": 1.0,
+    "cut": 1.0,
+    "hole": 1.0,
+    "print": 1.0
+  },
+  "pixel_auroc": 0.9879857953530534,
+  "aupro_30": 0.9480311986291925
+}

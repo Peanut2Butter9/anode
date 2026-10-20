@@ -1,0 +1,40 @@
+{
+  "dataset": "mvtec_loco",
+  "category": "pushpins",
+  "model": "resnet50_knn",
+  "seed": 0,
+  "image_size": 256,
+  "n_train": 372,
+  "n_val": 69,
+  "n_test": 310,
+  "fit_seconds": 17.592088925997814,
+  "test_seconds_total": 16.055630261998886,
+  "latency": {
+    "ms_per_image_mean": 8.295448766390715,
+    "ms_per_image_std": 0.9293852316503926,
+    "n": 30
+  },
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.647118301314459,
+  "f1_max": 0.7300215982721382,
+  "f1_max_threshold": 3.7387890815734863,
+  "val_threshold": {
+    "threshold": 5.081931114196777,
+    "accuracy": 0.49032258064516127,
+    "precision": 0.7333333333333333,
+    "recall": 0.12790697674418605,
+    "f1": 0.21782178217821782,
+    "tp": 22,
+    "tn": 130,
+    "fp": 8,
+    "fn": 150
+  },
+  "per_defect_auroc": {
+    "logical_anomalies": 0.5732600732600732,
+    "structural_anomalies": 0.7300948291286455
+  },
+  "image_auroc_logical": 0.5732600732600732,
+  "image_auroc_structural": 0.7300948291286455
+}

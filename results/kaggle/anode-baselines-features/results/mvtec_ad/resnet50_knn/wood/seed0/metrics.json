@@ -1,0 +1,41 @@
+{
+  "dataset": "mvtec_ad",
+  "category": "wood",
+  "model": "resnet50_knn",
+  "seed": 0,
+  "image_size": 256,
+  "n_train": 222,
+  "n_val": 25,
+  "n_test": 79,
+  "fit_seconds": 8.51816399100062,
+  "test_seconds_total": 3.31618283699936,
+  "latency": {
+    "ms_per_image_mean": 8.195017766653715,
+    "ms_per_image_std": 1.0908786538859085,
+    "n": 30
+  },
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9807017543859649,
+  "f1_max": 0.9743589743589743,
+  "f1_max_threshold": 5.821988582611084,
+  "val_threshold": {
+    "threshold": 8.305030822753906,
+    "accuracy": 0.620253164556962,
+    "precision": 1.0,
+    "recall": 0.5,
+    "f1": 0.6666666666666666,
+    "tp": 30,
+    "tn": 19,
+    "fp": 0,
+    "fn": 30
+  },
+  "per_defect_auroc": {
+    "color": 1.0,
+    "combined": 1.0,
+    "hole": 1.0,
+    "liquid": 0.9789473684210527,
+    "scratch": 0.9548872180451128
+  }
+}
