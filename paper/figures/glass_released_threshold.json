@@ -1,0 +1,22 @@
+{
+ "thresholds": {
+  "bottle": 0.1778,
+  "cable": 0.3319,
+  "capsule": 0.5281,
+  "carpet": 0.3523,
+  "grid": 0.2554,
+  "hazelnut": 0.5727,
+  "leather": 0.3852,
+  "metal_nut": 0.8079,
+  "pill": 0.3386,
+  "screw": 0.3751,
+  "tile": 0.7757,
+  "toothbrush": 0.1168,
+  "transistor": 0.929,
+  "wood": 0.492,
+  "zipper": 0.3326
+ },
+ "fpr": 0.33463337316058583,
+ "tpr": 0.9964462746892396,
+ "rule": "mean + 3 std of scores on the 10% validation split (part of the checkpoints' training data)"
+}
