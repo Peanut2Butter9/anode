@@ -1,0 +1,16 @@
+{
+  "id": "mhasbiarz/anode-data",
+  "title": "anode-data",
+  "code_file": "prepare_data.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_internet": false,
+  "dataset_sources": [
+    "mhasbiarz/mvtec-anomaly-detection",
+    "rakibulhassannishat/mvtec-loco-ad"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

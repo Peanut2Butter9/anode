@@ -1,0 +1,13 @@
+{
+  "id": "mhasbiarz/anode-glass-csad-probe",
+  "title": "anode-glass-csad-probe",
+  "code_file": "probe.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_internet": true,
+  "dataset_sources": ["mhasbiarz/mvtec-anomaly-detection", "mhasbiarz/anode-src"],
+  "competition_sources": [],
+  "kernel_sources": ["mhasbiarz/anode-data"]
+}

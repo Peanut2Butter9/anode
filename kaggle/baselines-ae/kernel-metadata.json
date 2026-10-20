@@ -1,0 +1,14 @@
+{
+  "id": "mhasbiarz/anode-baselines-ae",
+  "title": "anode-baselines-ae",
+  "code_file": "run.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": ["mhasbiarz/mvtec-anomaly-detection", "mhasbiarz/anode-src"],
+  "competition_sources": [],
+  "kernel_sources": ["mhasbiarz/anode-data"]
+}

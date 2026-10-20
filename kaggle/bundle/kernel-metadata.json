@@ -1,0 +1,13 @@
+{
+  "id": "mhasbiarz/anode-bundle",
+  "title": "anode-bundle",
+  "code_file": "run.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_internet": true,
+  "dataset_sources": ["mhasbiarz/mvtec-anomaly-detection", "mhasbiarz/anode-src"],
+  "competition_sources": [],
+  "kernel_sources": ["mhasbiarz/anode-data", "mhasbiarz/anode-glass-csad-probe", "mhasbiarz/anode-external"]
+}

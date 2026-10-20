@@ -1,0 +1,26 @@
+[project]
+name = "anode"
+version = "0.1.0"
+description = "Benchmark of unsupervised image anomaly detection on MVTec AD and MVTec LOCO AD"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "pillow",
+    "scikit-learn",
+    "scipy",
+    "timm>=0.9",
+    "torch>=2.1",
+    "torchvision>=0.16",
+]
+
+[project.optional-dependencies]
+report = ["pandas", "tabulate"]
+dev = ["pytest"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/anode"]
