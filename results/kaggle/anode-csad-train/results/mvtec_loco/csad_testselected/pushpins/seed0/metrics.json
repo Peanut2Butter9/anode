@@ -1,0 +1,71 @@
+{
+  "dataset": "mvtec_loco",
+  "category": "pushpins",
+  "model": "csad_testselected",
+  "seed": 0,
+  "image_size": 256,
+  "n_val": 69,
+  "n_test": 310,
+  "test_seconds_total": 46.578783033000946,
+  "latency": {
+    "ms_per_image_mean": 60.44578331145248,
+    "ms_per_image_std": 0.7131170105766678,
+    "n": 305
+  },
+  "checkpoint": "pushpins.pth",
+  "fit_seconds": 10967.635078439998,
+  "training": {
+    "segmentor_epochs": 120,
+    "segmentor_official_epochs": 120,
+    "lgst_iterations": 12000,
+    "lgst_official_iterations": 60000,
+    "segmentor_test_best": {
+      "epoch": 110,
+      "logical": 89.80729415512023,
+      "structural": 74.66451959205583,
+      "mean": 82.23590687358802
+    },
+    "lgst_test_best": {
+      "iteration": 12000,
+      "logical": 62.995699952221685,
+      "structural": 93.63929146537842,
+      "mean": 78.31749570880005
+    },
+    "segmentor_last": {
+      "epoch": 120,
+      "logical": 88.72431915910177,
+      "structural": 71.33655394524958,
+      "mean": 80.03043655217567
+    },
+    "lgst_last": {
+      "iteration": 12000,
+      "logical": 62.995699952221685,
+      "structural": 93.63929146537842,
+      "mean": 78.31749570880005
+    }
+  },
+  "note": "the same training as csad, each stage at its best logged test evaluation (the official selection rule); for measuring that selection's optimism only. CSAD also uses the validation split to normalise its scores.",
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9403016514998316,
+  "f1_max": 0.8861538461538462,
+  "f1_max_threshold": 11.137065887451172,
+  "val_threshold": {
+    "threshold": 13.867919118240625,
+    "accuracy": 0.867741935483871,
+    "precision": 0.9712230215827338,
+    "recall": 0.7848837209302325,
+    "f1": 0.8681672025723473,
+    "tp": 135,
+    "tn": 134,
+    "fp": 4,
+    "fn": 37
+  },
+  "per_defect_auroc": {
+    "logical_anomalies": 0.9357381748686096,
+    "structural_anomalies": 0.9454285203077473
+  },
+  "image_auroc_logical": 0.9357381748686096,
+  "image_auroc_structural": 0.9454285203077473
+}

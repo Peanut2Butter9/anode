@@ -39,7 +39,7 @@ LABELS = {
     "autoencoder_l2": "Autoencoder (L2)", "resnet50_knn": "ResNet-50 + kNN",
     "feature_ae_resnet50": "Feature AE (ResNet-50)", "feature_ae_res2net50": "Feature AE (Res2Net-50)",
     "patchcore": "PatchCore", "glass": "GLASS (ours, 50 ep.)", "glass_official": "GLASS (released)",
-    "csad_official": "CSAD (released)",
+    "csad": "CSAD (ours, 12k it.)", "csad_official": "CSAD (released)",
 }
 
 
@@ -50,14 +50,14 @@ def runs() -> pd.DataFrame:
 def fig_auroc(df: pd.DataFrame) -> None:
     """Image AUROC per model: MVTec AD (left), LOCO logical vs structural (right)."""
     order = ["autoencoder_l2", "resnet50_knn", "feature_ae_res2net50", "feature_ae_resnet50", "patchcore", "glass",
-             "glass_official", "csad_official"]
+             "glass_official", "csad", "csad_official"]
     ad = df[df.dataset == "mvtec_ad"].groupby("model")["image_auroc"].mean()
     ad_n = df[df.dataset == "mvtec_ad"].groupby("model")["category"].nunique()
     loco = df[df.dataset == "mvtec_loco"].groupby("model")[["auroc_logical", "auroc_structural"]].mean()
-    fig, (a, b) = plt.subplots(1, 2, figsize=(COL * 2, 2.1), sharey=True, gridspec_kw={"wspace": 0.08})
+    fig, (a, b) = plt.subplots(1, 2, figsize=(COL * 2, 2.3), sharey=True, gridspec_kw={"wspace": 0.08})
     y = np.arange(len(order))
     vals = [ad.get(m, np.nan) if ad_n.get(m, 0) == 15 else np.nan for m in order]
-    why = {"glass": "3 of 15 categories (0.995)", "csad_official": "LOCO only"}
+    why = {"glass": "3 of 15 categories (0.995)", "csad": "LOCO only", "csad_official": "LOCO only"}
     a.barh(y, [v - 0.5 if not np.isnan(v) else 0 for v in vals], left=0.5, height=0.6, color=BLUE)
     for yi, v in zip(y, vals):
         a.text(v + 0.006 if not np.isnan(v) else 0.505, yi, f"{v:.3f}" if not np.isnan(v) else why[order[yi]],
@@ -81,23 +81,29 @@ def fig_auroc(df: pd.DataFrame) -> None:
 
 
 def fig_selection(df: pd.DataFrame) -> None:
-    """GLASS on LOCO: AUROC gain of the official, test-selected epoch over the last epoch."""
-    loco = df[(df.dataset == "mvtec_loco") & df.model.isin(["glass", "glass_testselected"])]
-    piv = loco.pivot_table(index="category", columns="model", values=["auroc_logical", "auroc_structural"])
-    cats = list(piv.index)
-    y = np.arange(len(cats))
-    fig, ax = plt.subplots(figsize=(COL, 1.75))
+    """GLASS and CSAD on LOCO: AUROC gain of the official, test-selected checkpoint over the last one."""
+    pairs = [("glass", "GLASS, 50 epochs"), ("csad", "CSAD, 12k iterations")]
+    loco = df[df.dataset == "mvtec_loco"]
+    pairs = [(m, t) for m, t in pairs if {m, f"{m}_testselected"} <= set(loco.model)]
+    fig, axes = plt.subplots(1, len(pairs), figsize=(COL, 1.9), sharey=True, sharex=True, squeeze=False,
+                             gridspec_kw={"wspace": 0.12})
     h = 0.36
-    for k, (col, color, name) in enumerate([("auroc_logical", ORANGE, "logical"), ("auroc_structural", BLUE, "structural")]):
-        gain = piv[(col, "glass_testselected")] - piv[(col, "glass")]
-        ax.barh(y + (k - 0.5) * h, gain, height=h * 0.9, color=color, label=name)
-    ax.axvline(0, color=MUTED, lw=0.8)
-    ax.set_yticks(y, [c.replace("_", " ") for c in cats])
-    ax.invert_yaxis()
-    ax.grid(axis="y", visible=False)
-    ax.set_xlabel("AUROC(test-selected epoch) − AUROC(last epoch)")
-    ax.set_xticks([-0.05, 0, 0.05, 0.1])
-    ax.legend(frameon=False, loc="lower right", handlelength=1)
+    for ax, (m, title) in zip(axes[0], pairs):
+        piv = loco[loco.model.isin([m, f"{m}_testselected"])].pivot_table(
+            index="category", columns="model", values=["auroc_logical", "auroc_structural"])
+        cats = list(piv.index)
+        y = np.arange(len(cats))
+        for k, (col, color, name) in enumerate([("auroc_logical", ORANGE, "logical"),
+                                                ("auroc_structural", BLUE, "structural")]):
+            gain = piv[(col, f"{m}_testselected")] - piv[(col, m)]
+            ax.barh(y + (k - 0.5) * h, gain, height=h * 0.9, color=color, label=name)
+        ax.axvline(0, color=MUTED, lw=0.8)
+        ax.set_yticks(y, [c.replace("_", " ") for c in cats])
+        ax.grid(axis="y", visible=False)
+        ax.set_title(title, loc="left")
+    axes[0][0].invert_yaxis()
+    axes[0][-1].legend(frameon=False, loc="center right", handlelength=1)
+    fig.supxlabel("AUROC(test-selected checkpoint) − AUROC(last checkpoint)", fontsize=7.5, y=-0.09)
     fig.savefig(OUT / "selection.pdf")
 
 

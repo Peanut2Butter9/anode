@@ -7,7 +7,8 @@ import { fmt, useAsync } from '../hooks'
 const MODEL_NAMES: Record<string, string> = {
   autoencoder_l2: 'Autoencoder (L2)', resnet50_knn: 'ResNet-50 + kNN', feature_ae_resnet50: 'Feature AE (ResNet-50)',
   feature_ae_res2net50: 'Feature AE (Res2Net-50)', patchcore: 'PatchCore', glass: 'GLASS (our training, 50 ep.)',
-  glass_testselected: 'GLASS (ours, test-selected)', glass_official: 'GLASS (released)', csad_official: 'CSAD (released)',
+  glass_testselected: 'GLASS (ours, test-selected)', glass_official: 'GLASS (released)',
+  csad: 'CSAD (our training, 12k it.)', csad_testselected: 'CSAD (ours, test-selected)', csad_official: 'CSAD (released)',
 }
 
 export default function ProductPage() {
@@ -22,7 +23,7 @@ export default function ProductPage() {
   if (error || !p) return <ErrorBox error={error ?? 'not found'} />
 
   const info = MODEL_INFO[p.model]
-  const bars = Object.entries(p.benchmark).filter(([k, v]) => v != null && k !== 'glass_testselected')
+  const bars = Object.entries(p.benchmark).filter(([k, v]) => v != null && !k.endsWith('_testselected'))
     .sort((a, b) => (b[1] as number) - (a[1] as number))
   const deployed = DEPLOYED_KEY[p.model]
   const correct = results?.filter((r) => r.truth === r.verdict).length ?? 0

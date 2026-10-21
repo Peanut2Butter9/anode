@@ -8,6 +8,8 @@
   "glass": "GLASS (ours, last epoch)",
   "glass_testselected": "GLASS (ours, test-selected)",
   "glass_official": "GLASS (released ckpt)",
+  "csad": "CSAD (ours, last)",
+  "csad_testselected": "CSAD (ours, test-selected)",
   "csad_official": "CSAD (released ckpt)"
  },
  "datasets": {
@@ -1199,6 +1201,8 @@
     "patchcore",
     "glass",
     "glass_testselected",
+    "csad",
+    "csad_testselected",
     "csad_official"
    ],
    "per_category": {
@@ -1601,6 +1605,120 @@
       "ms_per_image": 34.1221
      }
     },
+    "csad": {
+     "breakfast_box": {
+      "image_auroc": 0.8947,
+      "auroc_logical": 0.9322,
+      "auroc_structural": 0.8601,
+      "auroc_loco_mean": 0.8962,
+      "pixel_auroc": null,
+      "aupro_30": null,
+      "val_f1": 0.7633,
+      "f1_max": 0.8677,
+      "ms_per_image": 56.0786
+     },
+     "juice_bottle": {
+      "image_auroc": 0.9238,
+      "auroc_logical": 0.9139,
+      "auroc_structural": 0.9387,
+      "auroc_loco_mean": 0.9263,
+      "pixel_auroc": null,
+      "aupro_30": null,
+      "val_f1": 0.8403,
+      "f1_max": 0.9143,
+      "ms_per_image": 51.9968
+     },
+     "pushpins": {
+      "image_auroc": 0.9419,
+      "auroc_logical": 0.9343,
+      "auroc_structural": 0.9504,
+      "auroc_loco_mean": 0.9424,
+      "pixel_auroc": null,
+      "aupro_30": null,
+      "val_f1": 0.8506,
+      "f1_max": 0.9,
+      "ms_per_image": 58.6615
+     },
+     "screw_bag": {
+      "image_auroc": 0.9554,
+      "auroc_logical": 0.9874,
+      "auroc_structural": 0.9019,
+      "auroc_loco_mean": 0.9447,
+      "pixel_auroc": null,
+      "aupro_30": null,
+      "val_f1": 0.8407,
+      "f1_max": 0.9231,
+      "ms_per_image": 53.8357
+     },
+     "splicing_connectors": {
+      "image_auroc": 0.9365,
+      "auroc_logical": 0.9554,
+      "auroc_structural": 0.9125,
+      "auroc_loco_mean": 0.934,
+      "pixel_auroc": null,
+      "aupro_30": null,
+      "val_f1": 0.7853,
+      "f1_max": 0.8947,
+      "ms_per_image": 55.1658
+     }
+    },
+    "csad_testselected": {
+     "breakfast_box": {
+      "image_auroc": 0.9095,
+      "auroc_logical": 0.9372,
+      "auroc_structural": 0.884,
+      "auroc_loco_mean": 0.9106,
+      "pixel_auroc": null,
+      "aupro_30": null,
+      "val_f1": 0.619,
+      "f1_max": 0.8837,
+      "ms_per_image": 55.4391
+     },
+     "juice_bottle": {
+      "image_auroc": 0.9318,
+      "auroc_logical": 0.934,
+      "auroc_structural": 0.9286,
+      "auroc_loco_mean": 0.9313,
+      "pixel_auroc": null,
+      "aupro_30": null,
+      "val_f1": 0.1846,
+      "f1_max": 0.9234,
+      "ms_per_image": 54.1767
+     },
+     "pushpins": {
+      "image_auroc": 0.9403,
+      "auroc_logical": 0.9357,
+      "auroc_structural": 0.9454,
+      "auroc_loco_mean": 0.9406,
+      "pixel_auroc": null,
+      "aupro_30": null,
+      "val_f1": 0.8682,
+      "f1_max": 0.8862,
+      "ms_per_image": 60.4458
+     },
+     "screw_bag": {
+      "image_auroc": 0.9691,
+      "auroc_logical": 0.9938,
+      "auroc_structural": 0.9277,
+      "auroc_loco_mean": 0.9608,
+      "pixel_auroc": null,
+      "aupro_30": null,
+      "val_f1": 0.814,
+      "f1_max": 0.9318,
+      "ms_per_image": 55.1
+     },
+     "splicing_connectors": {
+      "image_auroc": 0.9372,
+      "auroc_logical": 0.9629,
+      "auroc_structural": 0.9046,
+      "auroc_loco_mean": 0.9337,
+      "pixel_auroc": null,
+      "aupro_30": null,
+      "val_f1": 0.8,
+      "f1_max": 0.8997,
+      "ms_per_image": 55.8796
+     }
+    },
     "csad_official": {
      "breakfast_box": {
       "image_auroc": 0.9265,
@@ -1736,6 +1854,28 @@
      "val_f1": 0.5703,
      "f1_max": 0.8194,
      "ms_per_image": 35.1542
+    },
+    "csad": {
+     "image_auroc": 0.9305,
+     "auroc_logical": 0.9447,
+     "auroc_structural": 0.9127,
+     "auroc_loco_mean": 0.9287,
+     "pixel_auroc": null,
+     "aupro_30": null,
+     "val_f1": 0.816,
+     "f1_max": 0.9,
+     "ms_per_image": 55.1477
+    },
+    "csad_testselected": {
+     "image_auroc": 0.9376,
+     "auroc_logical": 0.9527,
+     "auroc_structural": 0.9181,
+     "auroc_loco_mean": 0.9354,
+     "pixel_auroc": null,
+     "aupro_30": null,
+     "val_f1": 0.6572,
+     "f1_max": 0.905,
+     "ms_per_image": 56.2082
     },
     "csad_official": {
      "image_auroc": 0.9585,

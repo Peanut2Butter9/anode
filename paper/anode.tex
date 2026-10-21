@@ -33,9 +33,9 @@ protocol: a fixed split, decision thresholds set without test labels, pixel-leve
 several seeds. The reproduction confirms the earlier ranking but corrects its report. Its best in-house model,
 called ``Res2Net'', was a feature autoencoder on ResNet-50 (0.980 image AUROC; 0.901 with an actual Res2Net
 backbone). Its accuracy and F1 were tuned on test labels. Its GLASS and CSAD scores (0.999 and 0.957) were the
-authors' released checkpoints. Both official training scripts keep the epoch with the best \emph{test} score.
-Retraining GLASS shows that this choice adds at most 0.002 AUROC on MVTec AD but 0.015 on LOCO (0.046 on logical
-anomalies). For deployment, the strongest benchmark model is not the most usable one: the released GLASS
+authors' released checkpoints. Both official training scripts keep the checkpoint with the best \emph{test}
+score. Retraining both shows that this choice adds at most 0.002 AUROC on MVTec AD but 0.015 (GLASS) and 0.006
+(CSAD) on LOCO, and up to 0.046 on logical anomalies. For deployment, the strongest benchmark model is not the most usable one: the released GLASS
 checkpoints leave no unseen normal images to calibrate a threshold and flag 33.5\% of good parts. PatchCore,
 trained on our split, flags 10.1\% while recalling 88.7\% of defects. The deployed platform combines PatchCore
 (MVTec AD and user-defined products) and CSAD (LOCO) with heatmaps, P-charts and a yield-based capability index.
@@ -119,7 +119,7 @@ we keep; we add the Res2Net-50 variant the report names. \\
 PatchCore & WideResNet-50 layer2+3, 10\% greedy coreset, $b{=}9$ re-weighting~\cite{roth2022patchcore}. Orig.:
 ResNet-50 with a random subsample. \\
 GLASS & Official code~\cite{chen2024glass}; released checkpoints, plus our training (Sec.~\ref{sec:selection}). \\
-CSAD & Official code~\cite{hsieh2024csad}; released LOCO checkpoints (not retrained). \\
+CSAD & Official code~\cite{hsieh2024csad}; released LOCO checkpoints, plus our training (Sec.~\ref{sec:selection}). \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -184,7 +184,8 @@ Feature AE (ResNet-50) & 0.749 & 0.886 & 0.817\spm{}.002 & 0.592 \\
 Feature AE (Res2Net-50) & 0.737 & 0.771 & 0.754\spm{}.033 & 0.382 \\
 PatchCore & 0.786 & 0.857 & 0.822 & 0.490 \\
 GLASS, ours (50 ep., last) & 0.713 & 0.913 & 0.813 & 0.530 \\
-CSAD, released & \textbf{0.977} & \textbf{0.937} & \textbf{0.957} & \textbf{0.802} \\
+CSAD, ours (12k it., last) & 0.945 & 0.913 & 0.929 & \textbf{0.816} \\
+CSAD, released & \textbf{0.977} & \textbf{0.937} & \textbf{0.957} & 0.802 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -198,8 +199,9 @@ threshold (0.931). The released GLASS checkpoints lead on every metric. The plai
 defects and ranks near chance on several categories. ResNet-50 + kNN, which uses one global vector per image, misses
 small defects (grid 0.334).
 
-On LOCO, every model without explicit component reasoning stays below 0.79 logical AUROC, while CSAD reaches 0.977.
-For structural anomalies the gap is smaller: GLASS trained by us reaches 0.913 against CSAD's 0.937. The ranking
+On LOCO, every model without explicit component reasoning stays below 0.79 logical AUROC, while CSAD reaches 0.977
+(0.945 when we train it with a fifth of the official schedule). For structural anomalies the gap is smaller: GLASS
+and CSAD trained by us both reach 0.913, against 0.937 for the released CSAD. The ranking
 supports the original report's design, which assigns a component-aware model to logical constraints.
 
 \subsection{Audit of the original report}\label{sec:audit}
@@ -239,21 +241,30 @@ CSAD (LOCO) & 0.957 & 0.957 & released ckpt. \\
 
 \subsection{Test-set checkpoint selection}\label{sec:selection}
 The official GLASS script evaluates on the test set after every epoch and keeps the epoch with the highest image
-plus pixel AUROC. CSAD's script does the same every 1,000 iterations. The released GLASS checkpoints record their
+plus pixel AUROC. CSAD's scripts do the same every 2 segmentor epochs and every 1,000 iterations of its
+student--teacher (LGST) branch. The released GLASS checkpoints record their
 epoch: of 640 epochs, metal nut stops at 5, transistor at 52, capsule at 56, and wood at 637. To measure the effect,
 we trained GLASS with the official code on all LOCO categories and on zipper, wood and transistor. We used 50
 epochs instead of 640, since a T4 needs about 100~s per epoch. We logged the official test evaluation every five
 epochs for analysis only. The last epoch is our reported model. On MVTec AD the two agree within 0.002
 (0.995 vs 0.996). On LOCO, selection adds 0.015 mean AUROC and 0.046 logical AUROC, with +0.10 on pushpins
 (Fig.~\ref{fig:selection}). Because the criterion mixes image and pixel scores, it also trades structural
-performance away on pushpins and screw bag. Released scores of both methods are therefore upper bounds. The
-optimism matters most on the harder LOCO benchmark.
+performance away on pushpins and screw bag.
+
+We trained CSAD the same way: the segmentor for its full 120 epochs, and the LGST for 12,000 of 60,000 iterations,
+since a T4 runs 1.2 iterations/s (about 14~h per category for the full schedule). We logged the test evaluation every
+10 epochs and 2,000 iterations. Selecting each stage on the test set adds 0.006 mean AUROC (logical +0.008,
+structural +0.005), less than for GLASS. For three of five categories the best LGST iteration is the last. Selection
+does not help calibration: F1 at $\tau$ drops from 0.816 to 0.657. Under the selected states, one juice-bottle
+validation image scores far above the rest and inflates $\sigma$. Our last-state CSAD stays 0.028 below the released
+checkpoints (0.929 vs 0.957). That gap mixes a five times longer schedule with selection every 1,000 iterations.
+Released scores of both methods are therefore upper bounds, and the optimism matters most on LOCO.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{figures/selection.pdf}
-\caption{GLASS on LOCO: AUROC of the epoch the official script picks on the test set, minus that of the last
-epoch.}
+\caption{LOCO, one seed: AUROC of the checkpoint the official scripts pick on the test set, minus that of the
+last checkpoint, for our GLASS (left) and CSAD (right) training.}
 \label{fig:selection}
 \end{figure}
 
@@ -325,8 +336,8 @@ USL $=\tau$.}
 \end{figure*}
 
 \section{Limitations}
-CSAD was not retrained (about 3~GPU-hours per category), so its scores carry the optimism quantified for GLASS.
-GLASS was retrained with a short schedule (50 of 640 epochs) and one seed. Validation sets contain 6 (toothbrush)
+GLASS and CSAD were retrained with short schedules (50 of 640 epochs; 12,000 of 60,000 LGST iterations) and one
+seed, so their gap to the released checkpoints mixes schedule length with test-set selection. Validation sets contain 6 (toothbrush)
 to 69 (pushpins) normal images, so thresholds and false-alarm rates vary between categories. Latency was measured
 on a T4 and on a laptop CPU, not on factory hardware. Finally, MVTec images are well lit and aligned, and real lines
 will need their own normal images, which the custom-product workflow is designed for.
@@ -373,34 +384,35 @@ Code and results: \url{https://github.com/Peanut2Butter9/anode}. Platform:
 autoencoder.}
 \label{tab:percat}
 \centering\scriptsize
-\setlength{\tabcolsep}{2.4pt}
-\begin{tabular}{@{}lccccccc@{}}
+\setlength{\tabcolsep}{2.0pt}
+\begin{tabular}{@{}lcccccccc@{}}
 \toprule
-Category & AE & kNN & FAE-R50 & FAE-R2N & PatchCore & GLASS$^\dagger$ & CSAD$^\dagger$ \\
+Category & AE & kNN & FAE-R50 & FAE-R2N & PatchCore & GLASS$^\dagger$ & CSAD$^\ast$ & CSAD$^\dagger$ \\
 \midrule
-bottle & .727 & .974 & 1.00 & .997 & 1.00 & 1.00 & \\
-cable & .488 & .799 & .983 & .917 & .993 & .998 & \\
-capsule & .647 & .816 & .961 & .825 & .973 & .999 & \\
-carpet & .371 & .703 & .981 & .979 & .988 & .998 & \\
-grid & .878 & .334 & .982 & .820 & .987 & 1.00 & \\
-hazelnut & .910 & .902 & 1.00 & .860 & 1.00 & 1.00 & \\
-leather & .408 & .870 & 1.00 & 1.00 & 1.00 & 1.00 & \\
-metal nut & .295 & .813 & 1.00 & .990 & .998 & 1.00 & \\
-pill & .598 & .720 & .957 & .902 & .954 & .993 & \\
-screw & .705 & .591 & .922 & .461 & .937 & 1.00 & \\
-tile & .775 & .989 & 1.00 & .999 & 1.00 & 1.00 & \\
-toothbrush & .567 & .803 & .961 & .919 & .928 & 1.00 & \\
-transistor & .473 & .827 & .964 & .917 & .999 & .999 & \\
-wood & .941 & .981 & .994 & .962 & .990 & .999 & \\
-zipper & .301 & .910 & .991 & .959 & .983 & .999 & \\
+bottle & .727 & .974 & 1.00 & .997 & 1.00 & 1.00 & & \\
+cable & .488 & .799 & .983 & .917 & .993 & .998 & & \\
+capsule & .647 & .816 & .961 & .825 & .973 & .999 & & \\
+carpet & .371 & .703 & .981 & .979 & .988 & .998 & & \\
+grid & .878 & .334 & .982 & .820 & .987 & 1.00 & & \\
+hazelnut & .910 & .902 & 1.00 & .860 & 1.00 & 1.00 & & \\
+leather & .408 & .870 & 1.00 & 1.00 & 1.00 & 1.00 & & \\
+metal nut & .295 & .813 & 1.00 & .990 & .998 & 1.00 & & \\
+pill & .598 & .720 & .957 & .902 & .954 & .993 & & \\
+screw & .705 & .591 & .922 & .461 & .937 & 1.00 & & \\
+tile & .775 & .989 & 1.00 & .999 & 1.00 & 1.00 & & \\
+toothbrush & .567 & .803 & .961 & .919 & .928 & 1.00 & & \\
+transistor & .473 & .827 & .964 & .917 & .999 & .999 & & \\
+wood & .941 & .981 & .994 & .962 & .990 & .999 & & \\
+zipper & .301 & .910 & .991 & .959 & .983 & .999 & & \\
 \midrule
-breakfast box & .623 & .803 & .848 & .825 & .818 & .832$^\ast$ & .928 \\
-juice bottle & .661 & .868 & .955 & .937 & .956 & .961$^\ast$ & .957 \\
-pushpins & .652 & .652 & .742 & .727 & .742 & .724$^\ast$ & .970 \\
-screw bag & .700 & .581 & .709 & .651 & .708 & .755$^\ast$ & .971 \\
-splicing conn. & .676 & .757 & .833 & .630 & .884 & .793$^\ast$ & .958 \\
+breakfast box & .623 & .803 & .848 & .825 & .818 & .832$^\ast$ & .896 & .928 \\
+juice bottle & .661 & .868 & .955 & .937 & .956 & .961$^\ast$ & .926 & .957 \\
+pushpins & .652 & .652 & .742 & .727 & .742 & .724$^\ast$ & .942 & .970 \\
+screw bag & .700 & .581 & .709 & .651 & .708 & .755$^\ast$ & .945 & .971 \\
+splicing conn. & .676 & .757 & .833 & .630 & .884 & .793$^\ast$ & .934 & .958 \\
 \bottomrule
-\multicolumn{8}{@{}l}{\scriptsize $^\dagger$released checkpoints; $^\ast$our training, 50 epochs, last epoch.}
+\multicolumn{9}{@{}l}{\scriptsize $^\dagger$released checkpoints.} \\
+\multicolumn{9}{@{}l}{\scriptsize $^\ast$our training, last checkpoint (GLASS 50 epochs, CSAD 12k iterations).}
 \end{tabular}
 \end{table}
 

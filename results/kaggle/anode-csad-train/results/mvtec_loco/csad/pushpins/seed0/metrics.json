@@ -1,0 +1,71 @@
+{
+  "dataset": "mvtec_loco",
+  "category": "pushpins",
+  "model": "csad",
+  "seed": 0,
+  "image_size": 256,
+  "n_val": 69,
+  "n_test": 310,
+  "test_seconds_total": 57.15101975699508,
+  "latency": {
+    "ms_per_image_mean": 58.66151663971412,
+    "ms_per_image_std": 1.3383513178315645,
+    "n": 305
+  },
+  "checkpoint": "pushpins.pth",
+  "fit_seconds": 10967.635078439998,
+  "training": {
+    "segmentor_epochs": 120,
+    "segmentor_official_epochs": 120,
+    "lgst_iterations": 12000,
+    "lgst_official_iterations": 60000,
+    "segmentor_test_best": {
+      "epoch": 110,
+      "logical": 89.80729415512023,
+      "structural": 74.66451959205583,
+      "mean": 82.23590687358802
+    },
+    "lgst_test_best": {
+      "iteration": 12000,
+      "logical": 62.995699952221685,
+      "structural": 93.63929146537842,
+      "mean": 78.31749570880005
+    },
+    "segmentor_last": {
+      "epoch": 120,
+      "logical": 88.72431915910177,
+      "structural": 71.33655394524958,
+      "mean": 80.03043655217567
+    },
+    "lgst_last": {
+      "iteration": 12000,
+      "logical": 62.995699952221685,
+      "structural": 93.63929146537842,
+      "mean": 78.31749570880005
+    }
+  },
+  "note": "our training with the official code (anode.external.csad_train), last state of both stages. CSAD also uses the validation split to normalise its scores.",
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.941902595214021,
+  "f1_max": 0.8999999999999999,
+  "f1_max_threshold": 9.809503555297852,
+  "val_threshold": {
+    "threshold": 14.640148381871052,
+    "accuracy": 0.8516129032258064,
+    "precision": 0.9632352941176471,
+    "recall": 0.7616279069767442,
+    "f1": 0.8506493506493505,
+    "tp": 131,
+    "tn": 133,
+    "fp": 5,
+    "fn": 41
+  },
+  "per_defect_auroc": {
+    "logical_anomalies": 0.9343048256091734,
+    "structural_anomalies": 0.9504383610663804
+  },
+  "image_auroc_logical": 0.9343048256091734,
+  "image_auroc_structural": 0.9504383610663804
+}

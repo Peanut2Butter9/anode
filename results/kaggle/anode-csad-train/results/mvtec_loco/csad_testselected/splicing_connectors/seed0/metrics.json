@@ -1,0 +1,71 @@
+{
+  "dataset": "mvtec_loco",
+  "category": "splicing_connectors",
+  "model": "csad_testselected",
+  "seed": 0,
+  "image_size": 256,
+  "n_val": 60,
+  "n_test": 312,
+  "test_seconds_total": 43.96728319799877,
+  "latency": {
+    "ms_per_image_mean": 55.87958032898101,
+    "ms_per_image_std": 0.8182832038094756,
+    "n": 307
+  },
+  "checkpoint": "splicing_connectors.pth",
+  "fit_seconds": 12554.046733546002,
+  "training": {
+    "segmentor_epochs": 120,
+    "segmentor_official_epochs": 120,
+    "lgst_iterations": 12000,
+    "lgst_official_iterations": 60000,
+    "segmentor_test_best": {
+      "epoch": 60,
+      "logical": 84.18145035792095,
+      "structural": 64.7256549678695,
+      "mean": 74.45355266289522
+    },
+    "lgst_test_best": {
+      "iteration": 12000,
+      "logical": 97.1444133208839,
+      "structural": 91.61641127039051,
+      "mean": 94.3804122956372
+    },
+    "segmentor_last": {
+      "epoch": 120,
+      "logical": 81.94833488951136,
+      "structural": 62.45180425111221,
+      "mean": 72.20006957031178
+    },
+    "lgst_last": {
+      "iteration": 12000,
+      "logical": 97.1444133208839,
+      "structural": 91.61641127039051,
+      "mean": 94.3804122956372
+    }
+  },
+  "note": "the same training as csad, each stage at its best logged test evaluation (the official selection rule); for measuring that selection's optimism only. CSAD also uses the validation split to normalise its scores.",
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9372142639439195,
+  "f1_max": 0.8997429305912596,
+  "f1_max_threshold": 6.729223251342773,
+  "val_threshold": {
+    "threshold": 20.26829500761318,
+    "accuracy": 0.7884615384615384,
+    "precision": 0.9635036496350365,
+    "recall": 0.6839378238341969,
+    "f1": 0.8,
+    "tp": 132,
+    "tn": 114,
+    "fp": 5,
+    "fn": 61
+  },
+  "per_defect_auroc": {
+    "logical_anomalies": 0.9628851540616246,
+    "structural_anomalies": 0.9045971329708354
+  },
+  "image_auroc_logical": 0.9628851540616246,
+  "image_auroc_structural": 0.9045971329708354
+}

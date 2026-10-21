@@ -1,0 +1,71 @@
+{
+  "dataset": "mvtec_loco",
+  "category": "breakfast_box",
+  "model": "csad_testselected",
+  "seed": 0,
+  "image_size": 256,
+  "n_val": 62,
+  "n_test": 275,
+  "test_seconds_total": 48.44834744900072,
+  "latency": {
+    "ms_per_image_mean": 55.439056514801955,
+    "ms_per_image_std": 0.5797929539140743,
+    "n": 270
+  },
+  "checkpoint": "breakfast_box.pth",
+  "fit_seconds": 11606.793476357,
+  "training": {
+    "segmentor_epochs": 120,
+    "segmentor_official_epochs": 120,
+    "lgst_iterations": 12000,
+    "lgst_official_iterations": 60000,
+    "segmentor_test_best": {
+      "epoch": 110,
+      "logical": 96.078431372549,
+      "structural": 73.74727668845317,
+      "mean": 84.91285403050108
+    },
+    "lgst_test_best": {
+      "iteration": 12000,
+      "logical": 83.13253012048193,
+      "structural": 86.54684095860567,
+      "mean": 84.83968553954381
+    },
+    "segmentor_last": {
+      "epoch": 120,
+      "logical": 93.19631467044648,
+      "structural": 69.640522875817,
+      "mean": 81.41841877313175
+    },
+    "lgst_last": {
+      "iteration": 12000,
+      "logical": 83.13253012048193,
+      "structural": 86.54684095860567,
+      "mean": 84.83968553954381
+    }
+  },
+  "note": "the same training as csad, each stage at its best logged test evaluation (the official selection rule); for measuring that selection's optimism only. CSAD also uses the validation split to normalise its scores.",
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9094979032075259,
+  "f1_max": 0.8837209302325582,
+  "f1_max_threshold": -0.14662444591522217,
+  "val_threshold": {
+    "threshold": 18.519519335869756,
+    "accuracy": 0.6509090909090909,
+    "precision": 0.9873417721518988,
+    "recall": 0.4508670520231214,
+    "f1": 0.6190476190476191,
+    "tp": 78,
+    "tn": 101,
+    "fp": 1,
+    "fn": 95
+  },
+  "per_defect_auroc": {
+    "logical_anomalies": 0.9371604063312071,
+    "structural_anomalies": 0.8839869281045752
+  },
+  "image_auroc_logical": 0.9371604063312071,
+  "image_auroc_structural": 0.8839869281045752
+}

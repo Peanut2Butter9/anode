@@ -93,7 +93,7 @@ The original notebooks used 224x224 without ImageNet normalisation.
 1. Project skeleton and Kaggle access ✓
 2. Dataset check on Kaggle ✓
 3. Benchmark of models 1–4 ✓ (2026-10-20)
-4. GLASS and CSAD ✓ (official checkpoints; own GLASS training, 50 epochs, on LOCO and 3 AD categories)
+4. GLASS and CSAD ✓ (official checkpoints; own GLASS training, 50 epochs, on LOCO and 3 AD categories; own CSAD training, 12k LGST iterations, 2026-10-21)
 5. Evaluation, tables, figures (sPRO for LOCO)
 6. Website (React + FastAPI) ✓ built and tested locally (2026-10-20)
 7. Deployment to Hugging Face Spaces ✓ (static demo: Docker Spaces need a paid plan since 2026)
@@ -154,8 +154,8 @@ the gap between test-selected and last-epoch checkpoints (model name
 **Budget.** On a Kaggle T4 the official GLASS loop takes ~100 s per epoch
 (LOCO pushpins), so 640 epochs would take ~18 h per category. We use 50
 epochs, on all 5 LOCO categories and on MVTec AD zipper, wood and transistor
-(the original notebooks' categories). CSAD retraining (segmentor + 60k LGST
-iterations per category) is not yet scheduled.
+(the original notebooks' categories). CSAD retraining is planned below
+("CSAD retraining plan").
 
 ## Our GLASS training (official code, 50 epochs, last vs test-selected epoch)
 
@@ -172,6 +172,76 @@ AUROC) also trades structural for logical performance. GLASS has the best
 structural AUROC on LOCO of all our own models (0.913), but like every model
 without explicit component reasoning it stays far behind CSAD on logical
 anomalies (0.713 vs 0.977).
+
+## CSAD retraining plan (2026-10-21)
+
+**Probe** (`kaggle/csad-probe`, `anode.external.csad_train`, results in
+`results/kaggle/anode-csad-probe`). The official code was run on pushpins on a
+Kaggle T4×2 with shortened schedules:
+
+| Stage | Official schedule | Measured on one T4 | Full schedule, one category |
+|---|---|---|---|
+| LGST | 60,000 iterations, batch 2 | 1.22 it/s alone, 1.20 it/s with the other GPU busy | ~13.8 h |
+| Segmentor | 120 epochs, `n_sup // 4` steps each | 0.16 s per step | 5–25 min (pushpins 11 steps, splicing_connectors 71) |
+| Setup / final scoring / export | – | ~1.5–2 min / ~1 min / 2 s | – |
+
+LGST is compute-bound, not stalled: its local student runs full-resolution
+FP32 convolutions (about 2 TFLOP per step), and a T4 manages ~1.2 steps/s.
+Two jobs on the two T4s do not slow each other, and Kaggle charges a T4×2
+session the same quota as one GPU. Export + scoring with `csad-official`
+worked end to end. Fixes needed on Linux (all in `csad_train`): sorted `glob`
+(the official loaders pair images and pseudo-labels by unsorted `glob`
+order), `Maysee/tiny-imagenet` → `zh-plus/tiny-imagenet`, and
+`torch.load(weights_only=False)`. Albumentations 2.x ignores
+`ShiftScaleRotate(value=0, mask_value=0)`, but its defaults are the same.
+
+**Chosen (2026-10-21): one session, LGST cut to 12,000 iterations.**
+`kaggle/csad-train` (`anode-csad-train`) trains all 5 categories with seed 0
+on a T4×2 in ~9 h. The segmentors run their full 120 epochs. LGST gets 12,000
+of 60,000 iterations (20 %; StepLR still drops at 95 %). Both stages keep their
+last state (`csad`). The run is reported as "CSAD (ours, 12k iterations)",
+like our 50-epoch GLASS. GPU 0 trains LGST for breakfast_box, juice_bottle
+and pushpins. GPU 1 trains the 5 segmentors, then LGST for screw_bag and
+splicing_connectors. Each category is exported and scored as soon as both of
+its stages are done.
+
+Like GLASS, the test set is logged but never used: every 2,000 LGST
+iterations and every 10 segmentor epochs. The official selection runs every
+1,000 iterations and every 2 epochs. The test-best state of each stage is kept
+separately (`--ts-dir`) and scored as `csad_testselected`, next to `csad`
+(last) and `csad_official` (released). A smoke run (`SMOKE = True`: pushpins,
+300 iterations, 4 epochs; 0.23 h) checked the whole pipeline first.
+
+**Result (2026-10-21).** All jobs succeeded in one 9.1 h session (15.9
+GPU-hours on two T4s). LGST ran at 1.21 it/s, about 2.9 h per category, and
+the segmentors took 8–32 min. Image AUROC, mean over 5 categories:
+
+| CSAD | Logical | Structural | Mean | F1 @ τ |
+|---|---|---|---|---|
+| Ours, last state (`csad`) | 0.945 | 0.913 | 0.929 | **0.816** |
+| Ours, test-selected (`csad_testselected`) | 0.953 | 0.918 | 0.935 | 0.657 |
+| Released checkpoints (`csad_official`) | **0.977** | **0.937** | **0.957** | 0.802 |
+
+Selecting each stage on the test set adds 0.006 mean AUROC (+0.008 logical,
++0.005 structural), much less than for GLASS (+0.015 / +0.046). The best LGST
+test iteration was the last one (12,000) for 3 of 5 categories; the best
+segmentor epochs were 60–110 of 120. Selection hurts calibration. Under the
+selected juice_bottle states, one validation image scores 270 against a
+median of ~2, so σ explodes, τ = μ + 3σ = 120 and recall drops to 0.10
+(F1 0.18). Our last-state CSAD is 0.028 below the released checkpoints. That
+gap mixes the 5× shorter LGST schedule with the authors' selection every
+1,000 iterations. Pushpins logical shows most of it (0.934 vs 0.997). Our
+structural AUROC equals our GLASS's (0.913). The website keeps the released
+CSAD for LOCO products.
+
+**Full official schedule (not run).** ≈ 5 × 13.9 h (LGST) + 1.0 h
+(segmentors) ≈ 71 GPU-hours, or ~43 quota hours on T4×2 over 4 sessions
+(about 1.5 weeks of free quota). Seed 0 only; three seeds ≈ 130 quota hours.
+One LGST run is longer than a 12 h Kaggle session, so this needs resume
+support that `csad_train` does not have yet. That means saving the
+optimizer, scheduler and RNG states, and a wall-clock guard, because Kaggle
+keeps no output from a killed session. FP16 autocast might make LGST 2–4×
+faster, but it changes the official numerics.
 
 ## Deployment findings (website, 2026-10-20)
 

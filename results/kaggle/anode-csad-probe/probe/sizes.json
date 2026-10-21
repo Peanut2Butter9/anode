@@ -1,0 +1,42 @@
+{
+ "breakfast_box": {
+  "n_train": 351,
+  "n_sup": 156,
+  "n_unsup": 195,
+  "n_val": 62,
+  "n_test": 275,
+  "mask_dirs": 351
+ },
+ "juice_bottle": {
+  "n_train": 335,
+  "n_sup": 68,
+  "n_unsup": 267,
+  "n_val": 54,
+  "n_test": 330,
+  "mask_dirs": 335
+ },
+ "pushpins": {
+  "n_train": 372,
+  "n_sup": 45,
+  "n_unsup": 327,
+  "n_val": 69,
+  "n_test": 310,
+  "mask_dirs": 372
+ },
+ "screw_bag": {
+  "n_train": 360,
+  "n_sup": 123,
+  "n_unsup": 237,
+  "n_val": 60,
+  "n_test": 341,
+  "mask_dirs": 360
+ },
+ "splicing_connectors": {
+  "n_train": 360,
+  "n_sup": 287,
+  "n_unsup": 73,
+  "n_val": 60,
+  "n_test": 312,
+  "mask_dirs": 360
+ }
+}

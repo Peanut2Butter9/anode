@@ -32,9 +32,10 @@ errors in the original report.
   images (mean + 3σ).
 - **Test-set checkpoint selection.** The official GLASS and CSAD training
   scripts both keep the checkpoint with the best *test* score (GLASS's
-  released metal-nut model is from epoch 5 of 640). Retraining GLASS and
-  comparing the last epoch with the test-selected one: selection adds ≤ 0.002
-  on MVTec AD but +0.015 on LOCO (+0.046 logical AUROC).
+  released metal-nut model is from epoch 5 of 640). Retraining both and
+  comparing the last checkpoint with the test-selected one: selection adds
+  ≤ 0.002 on MVTec AD but +0.015 (GLASS) and +0.006 (CSAD) on LOCO, and up to
+  +0.046 logical AUROC.
 - **Deployable ≠ best benchmark score.** The released GLASS checkpoints leave
   no unseen normal images to calibrate a threshold. On new normal images they
   flag about a third of good parts (33.5% at the validation rule). The platform therefore deploys PatchCore
@@ -59,19 +60,21 @@ Per-category tables: [results/tables/tables.md](results/tables/tables.md).
 | PatchCore (deployed for AD) | 0.982 | 0.928 | 0.915 | 0.822 | 0.786 | 0.857 |
 | GLASS, our training (50 epochs, last epoch) | 0.995 (3 categories) | – | – | 0.813 | 0.713 | 0.913 |
 | GLASS, released checkpoints | **0.999** | **0.969** | – | – | – | – |
+| CSAD, our training (12k of 60k LGST iterations, last state) | – | – | – | 0.929 | 0.945 | 0.913 |
 | CSAD, released checkpoints (deployed for LOCO) | – | – | – | **0.957** | **0.977** | **0.937** |
 
 ## Limitations
 
-- **CSAD was not retrained.** Its LOCO numbers come from the authors'
-  released checkpoints, which their training script selected on the test set.
-  Retraining (segmentor plus 60k LGST iterations) costs about 3 GPU-hours per
-  category on a Kaggle T4. The size of test-set selection is measured on
-  GLASS instead (+0.015 on LOCO), so CSAD's 0.957 should be read as an
-  upper bound of similar optimism.
-- **GLASS was retrained with a short schedule:** 50 epochs instead of 640
-  (about 100 s per epoch on a T4), one seed, on all 5 LOCO categories and 3
-  MVTec AD categories (zipper, wood, transistor).
+- **GLASS and CSAD were retrained with short schedules and one seed.**
+  GLASS: 50 of 640 epochs (about 100 s per epoch on a T4), on all 5 LOCO
+  categories and 3 MVTec AD categories (zipper, wood, transistor). CSAD: the
+  full 120 segmentor epochs but 12,000 of 60,000 LGST iterations. The LGST
+  runs at 1.2 iterations/s on a T4, so the full schedule would take about
+  14 h per category; our run took 15.9 GPU-hours on a Kaggle T4×2. The gap
+  between our CSAD (0.929) and the released one (0.957) therefore mixes the
+  shorter schedule with test-set selection, which adds +0.006 on our run.
+  F1 at the validation threshold is 0.816 for our CSAD against 0.802 for the
+  released one.
 - **Thresholds come from few images.** Validation sets hold 6 (toothbrush) to
   69 (pushpins) normal images, so the mean + 3σ thresholds, and the
   false-alarm rates they produce, vary noticeably between categories.
@@ -102,7 +105,8 @@ The experiments run as Kaggle notebooks (free T4 GPU). The package is
 uploaded as a private dataset with `kaggle/publish_code.sh`, and each
 notebook is pushed with `kaggle kernels push -p kaggle/<folder>`. Order:
 `data` → `baselines-features`, `baselines-ae` → `glass-csad-probe`,
-`external`, `glass-loco`, `glass-ad` → `bundle`. Then rebuild the tables:
+`external`, `glass-loco`, `glass-ad` → `bundle`; `csad-probe` → `csad-train`
+for our CSAD training. Then rebuild the tables:
 
 ```bash
 .venv/bin/python -m anode.report results/kaggle --out results/tables

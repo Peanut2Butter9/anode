@@ -1,0 +1,125 @@
+[{"stream_name":"stdout","time":0.670459502,"data":"$ /usr/bin/python3 -m pip install -q --no-deps /kaggle/input/datasets/mhasbiarz/anode-src/anode-0.1.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":3.577459951,"data":"$ /usr/bin/python3 -m pip install -q empatches tensorboardX\n"}
+,{"stream_name":"stdout","time":5.736703161,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.5/87.5 kB 3.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":9.167772397,"data":"$ git clone -q https://github.com/Tokichan/CSAD /tmp/repos/CSAD \u0026\u0026 git -C /tmp/repos/CSAD checkout -q d46cf856b99bf056088b5f510fd984e04813583a\n"}
+,{"stream_name":"stdout","time":16.209477772,"data":"mvtec_ad: None\n"}
+,{"stream_name":"stdout","time":16.209523465,"data":"mvtec_loco: /kaggle/input/notebooks/mhasbiarz/anode-data/mvtec_loco\n"}
+,{"stream_name":"stdout","time":16.27555671,"data":"$ /usr/bin/python3 -m anode.external.csad_train prepare --repo /tmp/repos/CSAD --root /kaggle/input/notebooks/mhasbiarz/anode-data/mvtec_loco --masks /kaggle/input/notebooks/mhasbiarz/anode-glass-csad-probe/csad_masks/masks --category breakfast_box\n"}
+,{"stream_name":"stdout","time":243.052825641,"data":"$ /usr/bin/python3 -m anode.external.csad_train prepare --repo /tmp/repos/CSAD --root /kaggle/input/notebooks/mhasbiarz/anode-data/mvtec_loco --masks /kaggle/input/notebooks/mhasbiarz/anode-glass-csad-probe/csad_masks/masks --category juice_bottle\n"}
+,{"stream_name":"stdout","time":422.471158935,"data":"$ /usr/bin/python3 -m anode.external.csad_train prepare --repo /tmp/repos/CSAD --root /kaggle/input/notebooks/mhasbiarz/anode-data/mvtec_loco --masks /kaggle/input/notebooks/mhasbiarz/anode-glass-csad-probe/csad_masks/masks --category pushpins\n"}
+,{"stream_name":"stdout","time":654.944333404,"data":"$ /usr/bin/python3 -m anode.external.csad_train prepare --repo /tmp/repos/CSAD --root /kaggle/input/notebooks/mhasbiarz/anode-data/mvtec_loco --masks /kaggle/input/notebooks/mhasbiarz/anode-glass-csad-probe/csad_masks/masks --category screw_bag\n"}
+,{"stream_name":"stdout","time":869.685273138,"data":"$ /usr/bin/python3 -m anode.external.csad_train prepare --repo /tmp/repos/CSAD --root /kaggle/input/notebooks/mhasbiarz/anode-data/mvtec_loco --masks /kaggle/input/notebooks/mhasbiarz/anode-glass-csad-probe/csad_masks/masks --category splicing_connectors\n"}
+,{"stream_name":"stdout","time":1058.813691573,"data":"[ 0.29 h] GPU 0 start lgst_breakfast_box\n"}
+,{"stream_name":"stdout","time":1058.814445037,"data":"[ 0.29 h] GPU 1 start segmentor_breakfast_box\n"}
+,{"stream_name":"stdout","time":2376.643629239,"data":"[ 0.66 h] GPU 1 ok segmentor_breakfast_box in 1318 s\n"}
+,{"stream_name":"stdout","time":2376.644122905,"data":"[ 0.66 h] GPU 1 start segmentor_juice_bottle\n"}
+,{"stream_name":"stdout","time":3114.806452985,"data":"[ 0.87 h] GPU 1 ok segmentor_juice_bottle in 738 s\n"}
+,{"stream_name":"stdout","time":3114.806967813,"data":"[ 0.87 h] GPU 1 start segmentor_pushpins\n"}
+,{"stream_name":"stdout","time":3628.430001234,"data":"[ 1.01 h] GPU 1 ok segmentor_pushpins in 514 s\n"}
+,{"stream_name":"stdout","time":3628.430319829,"data":"[ 1.01 h] GPU 1 start segmentor_screw_bag\n"}
+,{"stream_name":"stdout","time":4570.917351713,"data":"[ 1.27 h] GPU 1 ok segmentor_screw_bag in 942 s\n"}
+,{"stream_name":"stdout","time":4570.918168138,"data":"[ 1.27 h] GPU 1 start segmentor_splicing_connectors\n"}
+,{"stream_name":"stdout","time":6485.79946209,"data":"[ 1.80 h] GPU 1 ok segmentor_splicing_connectors in 1915 s\n"}
+,{"stream_name":"stdout","time":6485.800639895,"data":"[ 1.80 h] GPU 1 start lgst_screw_bag\n"}
+,{"stream_name":"stdout","time":11396.58156623,"data":"[ 3.17 h] GPU 0 ok lgst_breakfast_box in 10338 s\n"}
+,{"stream_name":"stdout","time":11396.58346617,"data":"[ 3.17 h] GPU 0 start export_csad_breakfast_box\n"}
+,{"stream_name":"stdout","time":11407.36905306,"data":"[ 3.17 h] GPU 0 ok export_csad_breakfast_box in 11 s\n"}
+,{"stream_name":"stdout","time":11407.370021003,"data":"[ 3.17 h] GPU 0 start score_csad_breakfast_box\n"}
+,{"stream_name":"stdout","time":11481.918392461,"data":"[ 3.19 h] GPU 0 ok score_csad_breakfast_box in 75 s\n"}
+,{"stream_name":"stdout","time":11481.918482576,"data":"[ 3.19 h] GPU 0 start export_csad_testselected_breakfast_box\n"}
+,{"stream_name":"stdout","time":11492.414148961,"data":"[ 3.19 h] GPU 0 ok export_csad_testselected_breakfast_box in 10 s\n"}
+,{"stream_name":"stdout","time":11492.414233483,"data":"[ 3.19 h] GPU 0 start score_csad_testselected_breakfast_box\n"}
+,{"stream_name":"stdout","time":11560.299415977,"data":"[ 3.21 h] GPU 0 ok score_csad_testselected_breakfast_box in 68 s\n"}
+,{"stream_name":"stdout","time":11560.29967175,"data":"$ cp /tmp/repos/CSAD/ckpt/pytorch_models/breakfast_box.pth /kaggle/working/ckpt/\n"}
+,{"stream_name":"stdout","time":11560.385316506,"data":"[ 3.21 h] GPU 0 start lgst_juice_bottle\n"}
+,{"stream_name":"stdout","time":16710.506731455,"data":"[ 4.64 h] GPU 1 ok lgst_screw_bag in 10225 s\n"}
+,{"stream_name":"stdout","time":16710.508379837,"data":"[ 4.64 h] GPU 1 start export_csad_screw_bag\n"}
+,{"stream_name":"stdout","time":16721.345889296,"data":"[ 4.64 h] GPU 1 ok export_csad_screw_bag in 11 s\n"}
+,{"stream_name":"stdout","time":16721.346141607,"data":"[ 4.64 h] GPU 1 start score_csad_screw_bag\n"}
+,{"stream_name":"stdout","time":17402.129454918,"data":"[ 4.83 h] GPU 1 ok score_csad_screw_bag in 681 s\n"}
+,{"stream_name":"stdout","time":17402.130548957,"data":"[ 4.83 h] GPU 1 start export_csad_testselected_screw_bag\n"}
+,{"stream_name":"stdout","time":17412.570835226,"data":"[ 4.84 h] GPU 1 ok export_csad_testselected_screw_bag in 10 s\n"}
+,{"stream_name":"stdout","time":17412.571291018,"data":"[ 4.84 h] GPU 1 start score_csad_testselected_screw_bag\n"}
+,{"stream_name":"stdout","time":17482.300677185,"data":"[ 4.86 h] GPU 1 ok score_csad_testselected_screw_bag in 70 s\n"}
+,{"stream_name":"stdout","time":17482.301052896,"data":"$ cp /tmp/repos/CSAD/ckpt/pytorch_models/screw_bag.pth /kaggle/working/ckpt/\n"}
+,{"stream_name":"stdout","time":17482.376640567,"data":"[ 4.86 h] GPU 1 start lgst_splicing_connectors\n"}
+,{"stream_name":"stdout","time":21622.146451318,"data":"[ 6.01 h] GPU 0 ok lgst_juice_bottle in 10062 s\n"}
+,{"stream_name":"stdout","time":21622.147338934,"data":"[ 6.01 h] GPU 0 start export_csad_juice_bottle\n"}
+,{"stream_name":"stdout","time":21632.381212253,"data":"[ 6.01 h] GPU 0 ok export_csad_juice_bottle in 10 s\n"}
+,{"stream_name":"stdout","time":21632.381897977,"data":"[ 6.01 h] GPU 0 start score_csad_juice_bottle\n"}
+,{"stream_name":"stdout","time":22092.059122482,"data":"[ 6.14 h] GPU 0 ok score_csad_juice_bottle in 460 s\n"}
+,{"stream_name":"stdout","time":22092.059212888,"data":"[ 6.14 h] GPU 0 start export_csad_testselected_juice_bottle\n"}
+,{"stream_name":"stdout","time":22102.58540929,"data":"[ 6.14 h] GPU 0 ok export_csad_testselected_juice_bottle in 11 s\n"}
+,{"stream_name":"stdout","time":22102.585520841,"data":"[ 6.14 h] GPU 0 start score_csad_testselected_juice_bottle\n"}
+,{"stream_name":"stdout","time":22160.480237014,"data":"[ 6.16 h] GPU 0 ok score_csad_testselected_juice_bottle in 58 s\n"}
+,{"stream_name":"stdout","time":22160.480515981,"data":"$ cp /tmp/repos/CSAD/ckpt/pytorch_models/juice_bottle.pth /kaggle/working/ckpt/\n"}
+,{"stream_name":"stdout","time":22160.557497908,"data":"[ 6.16 h] GPU 0 start lgst_pushpins\n"}
+,{"stream_name":"stdout","time":28147.917016868,"data":"[ 7.82 h] GPU 1 ok lgst_splicing_connectors in 10666 s\n"}
+,{"stream_name":"stdout","time":28147.917237287,"data":"[ 7.82 h] GPU 1 start export_csad_splicing_connectors\n"}
+,{"stream_name":"stdout","time":28158.656479171,"data":"[ 7.82 h] GPU 1 ok export_csad_splicing_connectors in 11 s\n"}
+,{"stream_name":"stdout","time":28158.65667406,"data":"[ 7.82 h] GPU 1 start score_csad_splicing_connectors\n"}
+,{"stream_name":"stdout","time":28264.110176544,"data":"[ 7.85 h] GPU 1 ok score_csad_splicing_connectors in 105 s\n"}
+,{"stream_name":"stdout","time":28264.110273713,"data":"[ 7.85 h] GPU 1 start export_csad_testselected_splicing_connectors\n"}
+,{"stream_name":"stdout","time":28274.503016638,"data":"[ 7.85 h] GPU 1 ok export_csad_testselected_splicing_connectors in 10 s\n"}
+,{"stream_name":"stdout","time":28274.503766355,"data":"[ 7.85 h] GPU 1 start score_csad_testselected_splicing_connectors\n"}
+,{"stream_name":"stdout","time":28336.710374485,"data":"[ 7.87 h] GPU 1 ok score_csad_testselected_splicing_connectors in 62 s\n"}
+,{"stream_name":"stdout","time":28336.710535728,"data":"$ cp /tmp/repos/CSAD/ckpt/pytorch_models/splicing_connectors.pth /kaggle/working/ckpt/\n"}
+,{"stream_name":"stdout","time":32641.830609142,"data":"[ 9.07 h] GPU 0 ok lgst_pushpins in 10481 s\n"}
+,{"stream_name":"stdout","time":32641.830806246,"data":"[ 9.07 h] GPU 0 start export_csad_pushpins\n"}
+,{"stream_name":"stdout","time":32652.101520714,"data":"[ 9.07 h] GPU 0 ok export_csad_pushpins in 10 s\n"}
+,{"stream_name":"stdout","time":32652.102175239,"data":"[ 9.07 h] GPU 0 start score_csad_pushpins\n"}
+,{"stream_name":"stdout","time":32757.086823259,"data":"[ 9.10 h] GPU 0 ok score_csad_pushpins in 105 s\n"}
+,{"stream_name":"stdout","time":32757.087052763,"data":"[ 9.10 h] GPU 0 start export_csad_testselected_pushpins\n"}
+,{"stream_name":"stdout","time":32767.20936818,"data":"[ 9.10 h] GPU 0 ok export_csad_testselected_pushpins in 10 s\n"}
+,{"stream_name":"stdout","time":32767.209570895,"data":"[ 9.10 h] GPU 0 start score_csad_testselected_pushpins\n"}
+,{"stream_name":"stdout","time":32832.769769541,"data":"[ 9.12 h] GPU 0 ok score_csad_testselected_pushpins in 66 s\n"}
+,{"stream_name":"stdout","time":32832.770048792,"data":"$ cp /tmp/repos/CSAD/ckpt/pytorch_models/pushpins.pth /kaggle/working/ckpt/\n"}
+,{"stream_name":"stdout","time":32832.844546951,"data":"mvtec_loco  csad  breakfast_box  0  0.8947  0.9322  0.8601  None  None  0.8677  0.7564  0.7633  11606.7935  56.0786  Tesla T4\n"}
+,{"stream_name":"stdout","time":32832.844576852,"data":"mvtec_loco  csad  juice_bottle  0  0.9238  0.9139  0.9387  None  None  0.9143  0.8030  0.8403  10774.0144  51.9968  Tesla T4\n"}
+,{"stream_name":"stdout","time":32832.844582472,"data":"mvtec_loco  csad  pushpins  0  0.9419  0.9343  0.9504  None  None  0.9000  0.8516  0.8506  10967.6351  58.6615  Tesla T4\n"}
+,{"stream_name":"stdout","time":32832.844588455,"data":"mvtec_loco  csad  screw_bag  0  0.9554  0.9874  0.9019  None  None  0.9231  0.8211  0.8407  11141.6300  53.8357  Tesla T4\n"}
+,{"stream_name":"stdout","time":32832.844596104,"data":"mvtec_loco  csad  splicing_connectors  0  0.9365  0.9554  0.9125  None  None  0.8947  0.7756  0.7853  12554.0467  55.1658  Tesla T4\n"}
+,{"stream_name":"stdout","time":32832.84459925,"data":"mvtec_loco  csad_testselected  breakfast_box  0  0.9095  0.9372  0.8840  None  None  0.8837  0.6509  0.6190  11606.7935  55.4391  Tesla T4\n"}
+,{"stream_name":"stdout","time":32832.844602253,"data":"mvtec_loco  csad_testselected  juice_bottle  0  0.9318  0.9340  0.9286  None  None  0.9234  0.3576  0.1846  10774.0144  54.1767  Tesla T4\n"}
+,{"stream_name":"stdout","time":32832.844605344,"data":"mvtec_loco  csad_testselected  pushpins  0  0.9403  0.9357  0.9454  None  None  0.8862  0.8677  0.8682  10967.6351  60.4458  Tesla T4\n"}
+,{"stream_name":"stdout","time":32832.844608515,"data":"mvtec_loco  csad_testselected  screw_bag  0  0.9691  0.9938  0.9277  None  None  0.9318  0.7977  0.8140  11141.6300  55.1000  Tesla T4\n"}
+,{"stream_name":"stdout","time":32832.84461996,"data":"mvtec_loco  csad_testselected  splicing_connectors  0  0.9372  0.9629  0.9046  None  None  0.8997  0.7885  0.8000  12554.0467  55.8796  Tesla T4\n"}
+,{"stream_name":"stdout","time":32832.844948568,"data":"{\n"}
+,{"stream_name":"stdout","time":32832.844959201,"data":" \"segmentor_breakfast_box\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.844963511,"data":" \"segmentor_juice_bottle\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.844966997,"data":" \"segmentor_pushpins\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.844970399,"data":" \"segmentor_screw_bag\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.844973853,"data":" \"segmentor_splicing_connectors\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.844979032,"data":" \"lgst_breakfast_box\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.844985427,"data":" \"export_csad_breakfast_box\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.844987755,"data":" \"score_csad_breakfast_box\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.844989951,"data":" \"export_csad_testselected_breakfast_box\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.844992237,"data":" \"score_csad_testselected_breakfast_box\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.84499455,"data":" \"lgst_screw_bag\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.844996764,"data":" \"export_csad_screw_bag\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.844998974,"data":" \"score_csad_screw_bag\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.845001252,"data":" \"export_csad_testselected_screw_bag\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.845003462,"data":" \"score_csad_testselected_screw_bag\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.845005673,"data":" \"lgst_juice_bottle\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.845007883,"data":" \"export_csad_juice_bottle\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.845010156,"data":" \"score_csad_juice_bottle\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.845012339,"data":" \"export_csad_testselected_juice_bottle\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.845014554,"data":" \"score_csad_testselected_juice_bottle\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.845016836,"data":" \"lgst_splicing_connectors\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.845019029,"data":" \"export_csad_splicing_connectors\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.845021229,"data":" \"score_csad_splicing_connectors\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.845024184,"data":" \"export_csad_testselected_splicing_connectors\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.845041338,"data":" \"score_csad_testselected_splicing_connectors\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.845045386,"data":" \"lgst_pushpins\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.845049169,"data":" \"export_csad_pushpins\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.845053191,"data":" \"score_csad_pushpins\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.845056964,"data":" \"export_csad_testselected_pushpins\": \"ok\",\n"}
+,{"stream_name":"stdout","time":32832.845060639,"data":" \"score_csad_testselected_pushpins\": \"ok\"\n"}
+,{"stream_name":"stdout","time":32832.845075905,"data":"}\n"}
+,{"stream_name":"stderr","time":32835.076432857,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":32835.076460295,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":32835.304886641,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":32835.304911544,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":32836.030938944,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":32836.523564489,"data":"[NbConvertApp] Writing 307672 bytes to __results__.html\n"}
+]

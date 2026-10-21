@@ -1,0 +1,71 @@
+{
+  "dataset": "mvtec_loco",
+  "category": "splicing_connectors",
+  "model": "csad",
+  "seed": 0,
+  "image_size": 256,
+  "n_val": 60,
+  "n_test": 312,
+  "test_seconds_total": 56.33061229300074,
+  "latency": {
+    "ms_per_image_mean": 55.165768319193226,
+    "ms_per_image_std": 1.4934735596640625,
+    "n": 307
+  },
+  "checkpoint": "splicing_connectors.pth",
+  "fit_seconds": 12554.046733546002,
+  "training": {
+    "segmentor_epochs": 120,
+    "segmentor_official_epochs": 120,
+    "lgst_iterations": 12000,
+    "lgst_official_iterations": 60000,
+    "segmentor_test_best": {
+      "epoch": 60,
+      "logical": 84.18145035792095,
+      "structural": 64.7256549678695,
+      "mean": 74.45355266289522
+    },
+    "lgst_test_best": {
+      "iteration": 12000,
+      "logical": 97.1444133208839,
+      "structural": 91.61641127039051,
+      "mean": 94.3804122956372
+    },
+    "segmentor_last": {
+      "epoch": 120,
+      "logical": 81.94833488951136,
+      "structural": 62.45180425111221,
+      "mean": 72.20006957031178
+    },
+    "lgst_last": {
+      "iteration": 12000,
+      "logical": 97.1444133208839,
+      "structural": 91.61641127039051,
+      "mean": 94.3804122956372
+    }
+  },
+  "note": "our training with the official code (anode.external.csad_train), last state of both stages. CSAD also uses the validation split to normalise its scores.",
+  "device": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "image_auroc": 0.9365176122262376,
+  "f1_max": 0.894736842105263,
+  "f1_max_threshold": 7.937229633331299,
+  "val_threshold": {
+    "threshold": 21.540402569857807,
+    "accuracy": 0.7756410256410257,
+    "precision": 0.9624060150375939,
+    "recall": 0.6632124352331606,
+    "f1": 0.7852760736196319,
+    "tp": 128,
+    "tn": 114,
+    "fp": 5,
+    "fn": 65
+  },
+  "per_defect_auroc": {
+    "logical_anomalies": 0.9554154995331466,
+    "structural_anomalies": 0.9125061789421651
+  },
+  "image_auroc_logical": 0.9554154995331466,
+  "image_auroc_structural": 0.9125061789421651
+}

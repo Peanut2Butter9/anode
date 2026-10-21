@@ -1,0 +1,196 @@
+[{"stream_name":"stdout","time":1.054442047,"data":"$ /usr/bin/python3 -m pip install -q --no-deps /kaggle/input/datasets/mhasbiarz/anode-src/anode-0.1.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":3.77384303,"data":"$ /usr/bin/python3 -m pip install -q empatches tensorboardX\n"}
+,{"stream_name":"stdout","time":6.467101562,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.5/87.5 kB 739.4 kB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":9.915189928,"data":"$ git clone -q https://github.com/Tokichan/CSAD /tmp/repos/CSAD \u0026\u0026 git -C /tmp/repos/CSAD checkout -q d46cf856b99bf056088b5f510fd984e04813583a\n"}
+,{"stream_name":"stdout","time":10.502724361,"data":"$ nvidia-smi --query-gpu=index,name,memory.total --format=csv\n"}
+,{"stream_name":"stdout","time":10.532123684,"data":"index, name, memory.total [MiB]\n"}
+,{"stream_name":"stdout","time":10.532310488,"data":"0, Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":10.532319665,"data":"1, Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":16.442613783,"data":"mvtec_ad: None\n"}
+,{"stream_name":"stdout","time":16.442660578999998,"data":"mvtec_loco: /kaggle/input/notebooks/mhasbiarz/anode-data/mvtec_loco\n"}
+,{"stream_name":"stdout","time":16.495464622,"data":"masks: /kaggle/input/notebooks/mhasbiarz/anode-glass-csad-probe/csad_masks/masks ['breakfast_box', 'juice_bottle', 'pushpins', 'screw_bag', 'splicing_connectors']\n"}
+,{"stream_name":"stdout","time":27.146599148,"data":"{\n"}
+,{"stream_name":"stdout","time":27.146636161,"data":" \"breakfast_box\": {\n"}
+,{"stream_name":"stdout","time":27.146640776,"data":"  \"n_train\": 351,\n"}
+,{"stream_name":"stdout","time":27.146648697,"data":"  \"n_sup\": 156,\n"}
+,{"stream_name":"stdout","time":27.146652061,"data":"  \"n_unsup\": 195,\n"}
+,{"stream_name":"stdout","time":27.146657008,"data":"  \"n_val\": 62,\n"}
+,{"stream_name":"stdout","time":27.146663515,"data":"  \"n_test\": 275,\n"}
+,{"stream_name":"stdout","time":27.146665997,"data":"  \"mask_dirs\": 351\n"}
+,{"stream_name":"stdout","time":27.146680203,"data":" },\n"}
+,{"stream_name":"stdout","time":27.146684142,"data":" \"juice_bottle\": {\n"}
+,{"stream_name":"stdout","time":27.146688603,"data":"  \"n_train\": 335,\n"}
+,{"stream_name":"stdout","time":27.146692003,"data":"  \"n_sup\": 68,\n"}
+,{"stream_name":"stdout","time":27.146695949,"data":"  \"n_unsup\": 267,\n"}
+,{"stream_name":"stdout","time":27.146699785,"data":"  \"n_val\": 54,\n"}
+,{"stream_name":"stdout","time":27.146702998,"data":"  \"n_test\": 330,\n"}
+,{"stream_name":"stdout","time":27.146708511,"data":"  \"mask_dirs\": 335\n"}
+,{"stream_name":"stdout","time":27.146711888,"data":" },\n"}
+,{"stream_name":"stdout","time":27.14671509,"data":" \"pushpins\": {\n"}
+,{"stream_name":"stdout","time":27.146718308,"data":"  \"n_train\": 372,\n"}
+,{"stream_name":"stdout","time":27.146721591,"data":"  \"n_sup\": 45,\n"}
+,{"stream_name":"stdout","time":27.146724786,"data":"  \"n_unsup\": 327,\n"}
+,{"stream_name":"stdout","time":27.146727968,"data":"  \"n_val\": 69,\n"}
+,{"stream_name":"stdout","time":27.146731178,"data":"  \"n_test\": 310,\n"}
+,{"stream_name":"stdout","time":27.14673442,"data":"  \"mask_dirs\": 372\n"}
+,{"stream_name":"stdout","time":27.146737644,"data":" },\n"}
+,{"stream_name":"stdout","time":27.14674088,"data":" \"screw_bag\": {\n"}
+,{"stream_name":"stdout","time":27.146744069,"data":"  \"n_train\": 360,\n"}
+,{"stream_name":"stdout","time":27.146747269,"data":"  \"n_sup\": 123,\n"}
+,{"stream_name":"stdout","time":27.146750447,"data":"  \"n_unsup\": 237,\n"}
+,{"stream_name":"stdout","time":27.146781862,"data":"  \"n_val\": 60,\n"}
+,{"stream_name":"stdout","time":27.146786778,"data":"  \"n_test\": 341,\n"}
+,{"stream_name":"stdout","time":27.146789914,"data":"  \"mask_dirs\": 360\n"}
+,{"stream_name":"stdout","time":27.146793598,"data":" },\n"}
+,{"stream_name":"stdout","time":27.146797558,"data":" \"splicing_connectors\": {\n"}
+,{"stream_name":"stdout","time":27.146801643,"data":"  \"n_train\": 360,\n"}
+,{"stream_name":"stdout","time":27.146805409,"data":"  \"n_sup\": 287,\n"}
+,{"stream_name":"stdout","time":27.146809272,"data":"  \"n_unsup\": 73,\n"}
+,{"stream_name":"stdout","time":27.146812528,"data":"  \"n_val\": 60,\n"}
+,{"stream_name":"stdout","time":27.146815725,"data":"  \"n_test\": 312,\n"}
+,{"stream_name":"stdout","time":27.146818946,"data":"  \"mask_dirs\": 360\n"}
+,{"stream_name":"stdout","time":27.146822376,"data":" }\n"}
+,{"stream_name":"stdout","time":27.146825508,"data":"}\n"}
+,{"stream_name":"stdout","time":27.147004891999998,"data":"$ /usr/bin/python3 -m anode.external.csad_train prepare --repo /tmp/repos/CSAD --root /kaggle/input/notebooks/mhasbiarz/anode-data/mvtec_loco --masks /kaggle/input/notebooks/mhasbiarz/anode-glass-csad-probe/csad_masks/masks --category pushpins\n"}
+,{"stream_name":"stdout","time":86.175566068,"data":"$ [GPU 0] /usr/bin/python3 -m anode.external.csad_train lgst --category pushpins --iterations 500 --seed 0 --repo /tmp/repos/CSAD --out /kaggle/working/probe \u003e 1_lgst_alone.log\n"}
+,{"stream_name":"stdout","time":712.703787297,"data":"----- 1_lgst_alone.log (tail)\n"}
+,{"stream_name":"stdout","time":712.703838725,"data":"Best image auc of pushpins: 69.3961\n"}
+,{"stream_name":"stdout","time":712.703843707,"data":"{\n"}
+,{"stream_name":"stdout","time":712.703846625,"data":" \"stage\": \"lgst\",\n"}
+,{"stream_name":"stdout","time":712.7038497,"data":" \"category\": \"pushpins\",\n"}
+,{"stream_name":"stdout","time":712.703852611,"data":" \"seed\": 0,\n"}
+,{"stream_name":"stdout","time":712.70385559,"data":" \"iterations\": 500,\n"}
+,{"stream_name":"stdout","time":712.703858363,"data":" \"official_iterations\": 60000,\n"}
+,{"stream_name":"stdout","time":712.703861242,"data":" \"batch_size\": 2,\n"}
+,{"stream_name":"stdout","time":712.703875483,"data":" \"n_train\": 372,\n"}
+,{"stream_name":"stdout","time":712.703880445,"data":" \"n_val\": 69,\n"}
+,{"stream_name":"stdout","time":712.703884957,"data":" \"n_test\": 310,\n"}
+,{"stream_name":"stdout","time":712.703889692,"data":" \"n_penalty\": 100000,\n"}
+,{"stream_name":"stdout","time":712.703894405,"data":" \"setup_s\": 131.07140228200007,\n"}
+,{"stream_name":"stdout","time":712.703902394,"data":" \"it_per_s\": 1.2174680528846809,\n"}
+,{"stream_name":"stdout","time":712.703907759,"data":" \"train_s\": 409.463608337,\n"}
+,{"stream_name":"stdout","time":712.703911862,"data":" \"final_eval_s\": 46.12371755000004,\n"}
+,{"stream_name":"stdout","time":712.703916005,"data":" \"last\": {\n"}
+,{"stream_name":"stdout","time":712.703919918,"data":"  \"logical\": 49.044433827042525,\n"}
+,{"stream_name":"stdout","time":712.703924138,"data":"  \"structural\": 89.74771873322598,\n"}
+,{"stream_name":"stdout","time":712.703928744,"data":"  \"mean\": 69.39607628013425\n"}
+,{"stream_name":"stdout","time":712.70393281,"data":" },\n"}
+,{"stream_name":"stdout","time":712.703936635,"data":" \"total_s\": 586.6587281690001,\n"}
+,{"stream_name":"stdout","time":712.703940991,"data":" \"gpu\": \"Tesla T4\",\n"}
+,{"stream_name":"stdout","time":712.703945134,"data":" \"peak_gpu_mb\": 3193\n"}
+,{"stream_name":"stdout","time":712.703961039,"data":"}\n"}
+,{"stream_name":"stdout","time":712.70396476,"data":"\n"}
+,{"stream_name":"stdout","time":712.703967884,"data":"phase 1: 627 s\n"}
+,{"stream_name":"stdout","time":712.703971489,"data":"$ [GPU 0] /usr/bin/python3 -m anode.external.csad_train segmentor --category pushpins --epochs 4 --eval-every 2 --repo /tmp/repos/CSAD --out /kaggle/working/probe \u003e 2_segmentor.log\n"}
+,{"stream_name":"stdout","time":712.704853321,"data":"$ [GPU 1] /usr/bin/python3 -m anode.external.csad_train lgst --category pushpins --iterations 1000 --seed 1 --repo /tmp/repos/CSAD --out /kaggle/working/probe \u003e 2_lgst_parallel.log\n"}
+,{"stream_name":"stdout","time":1686.885562276,"data":"----- 1_lgst_alone.log (tail)\n"}
+,{"stream_name":"stdout","time":1686.885625097,"data":"Best image auc of pushpins: 69.3961\n"}
+,{"stream_name":"stdout","time":1686.885644443,"data":"{\n"}
+,{"stream_name":"stdout","time":1686.885649872,"data":" \"stage\": \"lgst\",\n"}
+,{"stream_name":"stdout","time":1686.885654564,"data":" \"category\": \"pushpins\",\n"}
+,{"stream_name":"stdout","time":1686.885659735,"data":" \"seed\": 0,\n"}
+,{"stream_name":"stdout","time":1686.885664773,"data":" \"iterations\": 500,\n"}
+,{"stream_name":"stdout","time":1686.88566917,"data":" \"official_iterations\": 60000,\n"}
+,{"stream_name":"stdout","time":1686.8856734,"data":" \"batch_size\": 2,\n"}
+,{"stream_name":"stdout","time":1686.885677481,"data":" \"n_train\": 372,\n"}
+,{"stream_name":"stdout","time":1686.885682082,"data":" \"n_val\": 69,\n"}
+,{"stream_name":"stdout","time":1686.885686535,"data":" \"n_test\": 310,\n"}
+,{"stream_name":"stdout","time":1686.885699133,"data":" \"n_penalty\": 100000,\n"}
+,{"stream_name":"stdout","time":1686.885702226,"data":" \"setup_s\": 131.07140228200007,\n"}
+,{"stream_name":"stdout","time":1686.885705497,"data":" \"it_per_s\": 1.2174680528846809,\n"}
+,{"stream_name":"stdout","time":1686.885708408,"data":" \"train_s\": 409.463608337,\n"}
+,{"stream_name":"stdout","time":1686.885711246,"data":" \"final_eval_s\": 46.12371755000004,\n"}
+,{"stream_name":"stdout","time":1686.885714188,"data":" \"last\": {\n"}
+,{"stream_name":"stdout","time":1686.885716909,"data":"  \"logical\": 49.044433827042525,\n"}
+,{"stream_name":"stdout","time":1686.885719701,"data":"  \"structural\": 89.74771873322598,\n"}
+,{"stream_name":"stdout","time":1686.885722913,"data":"  \"mean\": 69.39607628013425\n"}
+,{"stream_name":"stdout","time":1686.885725603,"data":" },\n"}
+,{"stream_name":"stdout","time":1686.885729229,"data":" \"total_s\": 586.6587281690001,\n"}
+,{"stream_name":"stdout","time":1686.885745185,"data":" \"gpu\": \"Tesla T4\",\n"}
+,{"stream_name":"stdout","time":1686.885750323,"data":" \"peak_gpu_mb\": 3193\n"}
+,{"stream_name":"stdout","time":1686.885755324,"data":"}\n"}
+,{"stream_name":"stdout","time":1686.885759956,"data":"\n"}
+,{"stream_name":"stdout","time":1686.886833001,"data":"----- 2_lgst_parallel.log (tail)\n"}
+,{"stream_name":"stdout","time":1686.886855174,"data":"Best image auc of pushpins: 65.9758\n"}
+,{"stream_name":"stdout","time":1686.886860962,"data":"{\n"}
+,{"stream_name":"stdout","time":1686.886914869,"data":" \"stage\": \"lgst\",\n"}
+,{"stream_name":"stdout","time":1686.886922609,"data":" \"category\": \"pushpins\",\n"}
+,{"stream_name":"stdout","time":1686.886927753,"data":" \"seed\": 1,\n"}
+,{"stream_name":"stdout","time":1686.886932944,"data":" \"iterations\": 1000,\n"}
+,{"stream_name":"stdout","time":1686.886937965,"data":" \"official_iterations\": 60000,\n"}
+,{"stream_name":"stdout","time":1686.886942901,"data":" \"batch_size\": 2,\n"}
+,{"stream_name":"stdout","time":1686.886990926,"data":" \"n_train\": 372,\n"}
+,{"stream_name":"stdout","time":1686.886996235,"data":" \"n_val\": 69,\n"}
+,{"stream_name":"stdout","time":1686.886999942,"data":" \"n_test\": 310,\n"}
+,{"stream_name":"stdout","time":1686.887003639,"data":" \"n_penalty\": 100000,\n"}
+,{"stream_name":"stdout","time":1686.887007403,"data":" \"setup_s\": 82.2227687919999,\n"}
+,{"stream_name":"stdout","time":1686.88701085,"data":" \"it_per_s\": 1.2016578005003105,\n"}
+,{"stream_name":"stdout","time":1686.88704906,"data":" \"train_s\": 826.9203570080001,\n"}
+,{"stream_name":"stdout","time":1686.887054023,"data":" \"final_eval_s\": 46.707267366999986,\n"}
+,{"stream_name":"stdout","time":1686.887057675,"data":" \"last\": {\n"}
+,{"stream_name":"stdout","time":1686.887061133,"data":"  \"logical\": 50.03185220576525,\n"}
+,{"stream_name":"stdout","time":1686.887064464,"data":"  \"structural\": 81.91984254786186,\n"}
+,{"stream_name":"stdout","time":1686.887067908,"data":"  \"mean\": 65.97584737681356\n"}
+,{"stream_name":"stdout","time":1686.887071387,"data":" },\n"}
+,{"stream_name":"stdout","time":1686.887074743,"data":" \"total_s\": 955.850393167,\n"}
+,{"stream_name":"stdout","time":1686.88707785,"data":" \"gpu\": \"Tesla T4\",\n"}
+,{"stream_name":"stdout","time":1686.887081759,"data":" \"peak_gpu_mb\": 3193\n"}
+,{"stream_name":"stdout","time":1686.887085265,"data":"}\n"}
+,{"stream_name":"stdout","time":1686.887088532,"data":"\n"}
+,{"stream_name":"stdout","time":1686.888101833,"data":"----- 2_segmentor.log (tail)\n"}
+,{"stream_name":"stdout","time":1686.888137926,"data":" \"eval_s\": [\n"}
+,{"stream_name":"stdout","time":1686.888142674,"data":"  11.675389471000017\n"}
+,{"stream_name":"stdout","time":1686.888147004,"data":" ],\n"}
+,{"stream_name":"stdout","time":1686.888150655,"data":" \"final_s\": 11.867165890000024,\n"}
+,{"stream_name":"stdout","time":1686.888154856,"data":" \"loss\": [\n"}
+,{"stream_name":"stdout","time":1686.888158605,"data":"  2.4753298976204614,\n"}
+,{"stream_name":"stdout","time":1686.888162304,"data":"  0.8225426728075201,\n"}
+,{"stream_name":"stdout","time":1686.888166278,"data":"  0.6895128759470853,\n"}
+,{"stream_name":"stdout","time":1686.888170294,"data":"  0.6252752488309686\n"}
+,{"stream_name":"stdout","time":1686.888174218,"data":" ],\n"}
+,{"stream_name":"stdout","time":1686.888178083,"data":" \"test_log\": [\n"}
+,{"stream_name":"stdout","time":1686.888182006,"data":"  {\n"}
+,{"stream_name":"stdout","time":1686.888185893,"data":"   \"epoch\": 2,\n"}
+,{"stream_name":"stdout","time":1686.88819016,"data":"   \"logical\": 67.34352603917822,\n"}
+,{"stream_name":"stdout","time":1686.88819442,"data":"   \"structural\": 59.22347468241188\n"}
+,{"stream_name":"stdout","time":1686.888198909,"data":"  }\n"}
+,{"stream_name":"stdout","time":1686.88820392,"data":" ],\n"}
+,{"stream_name":"stdout","time":1686.888208164,"data":" \"last\": {\n"}
+,{"stream_name":"stdout","time":1686.888212459,"data":"  \"logical\": 63.887561713648665,\n"}
+,{"stream_name":"stdout","time":1686.88821659,"data":"  \"structural\": 59.22347468241187\n"}
+,{"stream_name":"stdout","time":1686.88822019,"data":" },\n"}
+,{"stream_name":"stdout","time":1686.888223552,"data":" \"total_s\": 120.75841684099987,\n"}
+,{"stream_name":"stdout","time":1686.88822718,"data":" \"gpu\": \"Tesla T4\",\n"}
+,{"stream_name":"stdout","time":1686.8882312,"data":" \"peak_gpu_mb\": 1283\n"}
+,{"stream_name":"stdout","time":1686.888235053,"data":"}\n"}
+,{"stream_name":"stdout","time":1686.888238437,"data":"\n"}
+,{"stream_name":"stdout","time":1686.888242576,"data":"phase 2: 974 s\n"}
+,{"stream_name":"stdout","time":1686.88825553,"data":"$ /usr/bin/python3 -m anode.external.csad_train export --repo /tmp/repos/CSAD --category pushpins --out /kaggle/working/probe\n"}
+,{"stream_name":"stderr","time":1693.409214525,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":1695.57845144,"data":"Loading checkpoint...\n"}
+,{"stream_name":"stdout","time":1695.578493303,"data":"Model saved to ./ckpt/pytorch_models/pushpins.pth\n"}
+,{"stream_name":"stdout","time":1695.578500276,"data":"{\n"}
+,{"stream_name":"stdout","time":1695.578503865,"data":" \"stage\": \"export\",\n"}
+,{"stream_name":"stdout","time":1695.578507945,"data":" \"category\": \"pushpins\",\n"}
+,{"stream_name":"stdout","time":1695.578512205,"data":" \"total_s\": 2.364308933999837,\n"}
+,{"stream_name":"stdout","time":1695.578515624,"data":" \"gpu\": \"Tesla T4\",\n"}
+,{"stream_name":"stdout","time":1695.57851867,"data":" \"peak_gpu_mb\": 177\n"}
+,{"stream_name":"stdout","time":1695.578521892,"data":"}\n"}
+,{"stream_name":"stdout","time":1695.604817984,"data":"/tmp/repos/CSAD/ckpt/pytorch_models/pushpins.pth\n"}
+,{"stream_name":"stdout","time":1696.940613229,"data":"$ /usr/bin/python3 -m anode.external.run csad-official --repo /tmp/repos/CSAD --ckpts /tmp/repos/CSAD/ckpt/pytorch_models --root /kaggle/input/notebooks/mhasbiarz/anode-data/mvtec_loco --out /kaggle/working/probe/pipeline_check --categories pushpins\n"}
+,{"stream_name":"stderr","time":1708.138664843,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":1762.89058649,"data":"Loading MVTec LOCO pushpins (test)\n"}
+,{"stream_name":"stdout","time":1762.890655672,"data":"Loading MVTec LOCO pushpins (validation)\n"}
+,{"stream_name":"stdout","time":1762.890664144,"data":"mvtec_loco/pushpins csad_official seed0: I-AUROC 0.6936  (logical 0.6108, structural 0.7866)  fit 0s  53.6 ms/img\n"}
+,{"stream_name":"stdout","time":1764.41284998,"data":"phase 3: 78 s\n"}
+,{"stream_name":"stdout","time":1764.413820897,"data":"timing_export_pushpins.json {\"stage\": \"export\", \"category\": \"pushpins\", \"total_s\": 2.364308933999837, \"gpu\": \"Tesla T4\", \"peak_gpu_mb\": 177}\n"}
+,{"stream_name":"stdout","time":1764.415146611,"data":"timing_lgst_pushpins_seed0.json {\"stage\": \"lgst\", \"category\": \"pushpins\", \"seed\": 0, \"iterations\": 500, \"official_iterations\": 60000, \"batch_size\": 2, \"n_train\": 372, \"n_val\": 69, \"n_test\": 310, \"n_penalty\": 100000, \"setup_s\": 131.07140228200007, \"it_per_s\": 1.2174680528846809, \"train_s\": 409.463608337, \"final_eval_s\": 46.12371755000004, \"last\": {\"logical\": 49.044433827042525, \"structural\": 89.74771873322598, \"mean\": 69.39607628013425}, \"total_s\": 586.6587281690001, \"gpu\": \"Tesla T4\", \"peak_gpu_mb\": 3193}\n"}
+,{"stream_name":"stdout","time":1764.415181053,"data":"timing_lgst_pushpins_seed1.json {\"stage\": \"lgst\", \"category\": \"pushpins\", \"seed\": 1, \"iterations\": 1000, \"official_iterations\": 60000, \"batch_size\": 2, \"n_train\": 372, \"n_val\": 69, \"n_test\": 310, \"n_penalty\": 100000, \"setup_s\": 82.2227687919999, \"it_per_s\": 1.2016578005003105, \"train_s\": 826.9203570080001, \"final_eval_s\": 46.707267366999986, \"last\": {\"logical\": 50.03185220576525, \"structural\": 81.91984254786186, \"mean\": 65.97584737681356}, \"total_s\": 955.850393167, \"gpu\": \"Tesla T4\", \"peak_gpu_mb\": 3193}\n"}
+,{"stream_name":"stdout","time":1764.415192538,"data":"timing_segmentor_pushpins.json {\"stage\": \"segmentor\", \"category\": \"pushpins\", \"seed\": 42, \"epochs\": 4, \"official_epochs\": 120, \"sup_only_epochs\": 50, \"iters_per_epoch\": 11, \"n_sup\": 45, \"n_unsup\": 327, \"n_train\": 372, \"n_val\": 69, \"n_test\": 310, \"setup_s\": 89.50877226499983, \"sup_only_epoch_s\": 1.926437925000016, \"joint_epoch_s\": null, \"eval_s\": [11.675389471000017], \"final_s\": 11.867165890000024, \"test_log\": [{\"epoch\": 2, \"logical\": 67.34352603917822, \"structural\": 59.22347468241188}], \"last\": {\"logical\": 63.887561713648665, \"structural\": 59.22347468241187}, \"total_s\": 120.75841684099987, \"gpu\": \"Tesla T4\", \"peak_gpu_mb\": 1283}\n"}
+,{"stream_name":"stderr","time":1766.618373832,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1766.618418119,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1766.843256448,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1766.843317407,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1767.56536513,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1768.050559035,"data":"[NbConvertApp] Writing 300134 bytes to __results__.html\n"}
+]

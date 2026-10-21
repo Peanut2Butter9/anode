@@ -1,0 +1,24 @@
+{
+ "stage": "lgst",
+ "category": "pushpins",
+ "seed": 0,
+ "iterations": 500,
+ "official_iterations": 60000,
+ "batch_size": 2,
+ "n_train": 372,
+ "n_val": 69,
+ "n_test": 310,
+ "n_penalty": 100000,
+ "setup_s": 131.07140228200007,
+ "it_per_s": 1.2174680528846809,
+ "train_s": 409.463608337,
+ "final_eval_s": 46.12371755000004,
+ "last": {
+  "logical": 49.044433827042525,
+  "structural": 89.74771873322598,
+  "mean": 69.39607628013425
+ },
+ "total_s": 586.6587281690001,
+ "gpu": "Tesla T4",
+ "peak_gpu_mb": 3193
+}

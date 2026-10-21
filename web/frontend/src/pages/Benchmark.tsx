@@ -90,7 +90,7 @@ export default function BenchmarkPage() {
           <h2 className="font-semibold">Reading the table</h2>
           <ul className="list-disc space-y-1.5 pl-5 muted">
             <li><b>Released</b> GLASS and CSAD checkpoints come from their authors. Both official training scripts keep the epoch with the best <i>test</i> score (GLASS's metal nut checkpoint is from epoch 5 of 640), so these columns are optimistic upper bounds.</li>
-            <li><b>GLASS (our training)</b> uses the official code for 50 epochs and reports the last epoch. The "test-selected" column picks the best epoch on the test set, only to show how much that choice inflates the score.</li>
+            <li><b>GLASS and CSAD (our training)</b> use the official code with a shortened schedule (GLASS 50 of 640 epochs, CSAD 12,000 of 60,000 iterations) and report the last checkpoint. The "test-selected" columns pick the best checkpoint on the test set, only to show how much that choice inflates the score.</li>
             <li>A blank mean means the model was not run on every category.</li>
             <li><b>Deployed</b> marks the model the website uses. For MVTec AD that is PatchCore, not released GLASS: an operating threshold has to come from normal images the model never saw, and the released GLASS checkpoints leave none.</li>
           </ul>
