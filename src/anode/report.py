@@ -15,7 +15,8 @@ import pandas as pd
 from .data import MVTEC_AD_CATEGORIES, MVTEC_LOCO_CATEGORIES
 
 MODEL_ORDER = ["autoencoder_l2", "resnet50_knn", "feature_ae_resnet50", "feature_ae_res2net50", "patchcore",
-               "glass", "glass_testselected", "glass_official", "csad", "csad_official"]
+               "glass", "glass_testselected", "glass_official", "csad", "csad_testselected",
+               "csad_official"]
 MODEL_LABELS = {
     "autoencoder_l2": "AE (L2)",
     "resnet50_knn": "ResNet50+kNN",
@@ -25,7 +26,8 @@ MODEL_LABELS = {
     "glass": "GLASS (ours, last epoch)",
     "glass_testselected": "GLASS (ours, test-selected)",
     "glass_official": "GLASS (released ckpt)",
-    "csad": "CSAD (ours)",
+    "csad": "CSAD (ours, last)",
+    "csad_testselected": "CSAD (ours, test-selected)",
     "csad_official": "CSAD (released ckpt)",
 }
 

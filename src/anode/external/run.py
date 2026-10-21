@@ -1,20 +1,23 @@
 """Run the official GLASS / CSAD code and write results in the AnoDe format.
 
     python -m anode.external.run glass-official --repo GLASS --ckpts DIR --root MVTEC_AD --out results
-    python -m anode.external.run csad-official  --repo CSAD  --ckpts DIR --root MVTEC_LOCO --out results
+    python -m anode.external.run csad-official  --repo CSAD  --ckpts DIR --root MVTEC_LOCO --out results \
+        [--model csad|csad_testselected --timings DIR]
     python -m anode.external.run glass-train    --repo GLASS --dataset mvtec_loco --root ROOT --dtd DTD \\
         --work /tmp/glass --epochs 640 --out results [--categories ...] [--fg-root FG]
 
 Model names in the results: ``glass_official`` and ``csad_official`` (the
 authors' released checkpoints, which their training scripts selected on the
-test set), ``glass`` (our training, last-epoch checkpoint), and
-``glass_testselected`` (the same run, with the epoch the official script picks
-on the test set; for measuring that selection's optimism only).
+test set), ``glass`` and ``csad`` (our training, last checkpoint), and
+``glass_testselected`` and ``csad_testselected`` (the same runs, with the
+checkpoint the official scripts pick on the test set; for measuring that
+selection's optimism only). Our CSAD training is ``anode.external.csad_train``.
 """
 
 from __future__ import annotations
 
 import argparse
+import json
 import platform
 import re
 import shutil
@@ -81,11 +84,37 @@ def glass_official(a) -> None:
         write_run(run_dir, a.root, test, result, scores, maps, None)
 
 
+CSAD_NOTES = {
+    "csad_official": "released checkpoint; the official training script keeps the iteration with the best test "
+                     "AUROC.",
+    "csad": "our training with the official code (anode.external.csad_train), last state of both stages.",
+    "csad_testselected": "the same training as csad, each stage at its best logged test evaluation (the official "
+                         "selection rule); for measuring that selection's optimism only.",
+}
+
+
+def _csad_training(timings: Path | None, cat: str, seed: int) -> dict:
+    """Training details and time of our CSAD runs, from csad_train's timing files."""
+    if timings is None:
+        return {"fit_seconds": 0.0}
+    seg = json.loads((timings / f"timing_segmentor_{cat}.json").read_text())
+    lgst = json.loads((timings / f"timing_lgst_{cat}_seed{seed}.json").read_text())
+    return {
+        "fit_seconds": seg["total_s"] + lgst["total_s"],
+        "training": {
+            "segmentor_epochs": seg["epochs"], "segmentor_official_epochs": seg["official_epochs"],
+            "lgst_iterations": lgst["iterations"], "lgst_official_iterations": lgst["official_iterations"],
+            "segmentor_test_best": seg.get("test_best"), "lgst_test_best": lgst.get("test_best"),
+            "segmentor_last": seg["last"], "lgst_last": lgst["last"],
+        },
+    }
+
+
 def csad_official(a) -> None:
     from . import csad as C
     device = pick_device(a.device)
     for cat in a.categories or DATASETS["mvtec_loco"]:
-        run_dir = a.out / "mvtec_loco" / "csad_official" / cat / "seed0"
+        run_dir = a.out / "mvtec_loco" / a.model / cat / f"seed{a.seed}"
         if (run_dir / "metrics.json").exists():
             continue
         ckpt = next(Path(a.ckpts).rglob(f"{cat}.pth"))
@@ -98,11 +127,11 @@ def csad_official(a) -> None:
         test_scores = np.array([test_map[str(s.image.resolve())] for s in test])
         val_scores = np.array([val_map[str(s.image.resolve())] for s in val])
         result = {
-            "dataset": "mvtec_loco", "category": cat, "model": "csad_official", "seed": 0, "image_size": 256,
-            "n_val": len(val), "n_test": len(test), "fit_seconds": 0.0, "test_seconds_total": test_s,
+            "dataset": "mvtec_loco", "category": cat, "model": a.model, "seed": a.seed, "image_size": 256,
+            "n_val": len(val), "n_test": len(test), "test_seconds_total": test_s,
             "latency": _latency(times), "checkpoint": ckpt.name,
-            "note": "released checkpoint; the official training script keeps the iteration with the best test AUROC. "
-                    "CSAD also uses the validation split to normalise its scores.",
+            **_csad_training(a.timings, cat, a.seed),
+            "note": CSAD_NOTES[a.model] + " CSAD also uses the validation split to normalise its scores.",
             **_env(device),
             **evaluate("mvtec_loco", test, test_scores, None, val_scores, 256),
         }
@@ -174,6 +203,11 @@ def main(argv=None) -> None:
         s.add_argument("--device", default="auto")
         if name != "glass-train":
             s.add_argument("--ckpts", type=Path, required=True)
+    c = sub.choices["csad-official"]
+    c.add_argument("--model", choices=sorted(CSAD_NOTES), default="csad_official",
+                   help="name in the results: the released checkpoints, or our training (last / test-selected)")
+    c.add_argument("--seed", type=int, default=0)
+    c.add_argument("--timings", type=Path, help="csad_train timing files (training time and details of our runs)")
     t = sub.choices["glass-train"]
     t.add_argument("--dataset", choices=sorted(DATASETS), required=True)
     t.add_argument("--dtd", type=Path, required=True, help="DTD images folder (anomaly source for GLASS)")
