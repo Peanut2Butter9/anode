@@ -34,7 +34,7 @@ def main() -> None:
     p.add_argument("--bundle", type=Path, default=ROOT / "bundle")
     p.add_argument("--repos", type=Path, default=ROOT / "third_party")
     p.add_argument("--out", type=Path, default=ROOT / "web" / "static-data")
-    p.add_argument("--samples-url", default="https://huggingface.co/Arzz/anode-models/resolve/main")
+    p.add_argument("--samples-url", default="https://huggingface.co/peanut2butter9/anode-models/resolve/main")
     a = p.parse_args()
 
     os.environ["ANODE_BUNDLE"] = str(a.bundle.resolve())

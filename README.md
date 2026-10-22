@@ -1,7 +1,7 @@
 # AnoDe — Anomaly Detection Platform for Manufacturing
 
-**Live demo:** [huggingface.co/spaces/Arzz/anode](https://huggingface.co/spaces/Arzz/anode) (static: precomputed results for the sample images) ·
-**Models:** [huggingface.co/Arzz/anode-models](https://huggingface.co/Arzz/anode-models) ·
+**Live demo:** [huggingface.co/spaces/peanut2butter9/anode](https://huggingface.co/spaces/peanut2butter9/anode) (static: precomputed results for the sample images) ·
+**Models:** [huggingface.co/peanut2butter9/anode-models](https://huggingface.co/peanut2butter9/anode-models) ·
 **Protocol and findings:** [docs/ROADMAP.md](docs/ROADMAP.md)
 
 AnoDe benchmarks unsupervised image anomaly detection on
@@ -116,7 +116,7 @@ The public demo is a free static build: `web/build_static.py` runs the deployed
 models once on every sample image, and `python web/deploy.py static --repo
 USER/anode` publishes the result. Live inference (your own images, the camera,
 custom products) needs the full app. To run it locally, put the model bundle in
-`bundle/` (`hf download Arzz/anode-models --local-dir bundle`) and the official
+`bundle/` (`hf download peanut2butter9/anode-models --local-dir bundle`) and the official
 CSAD code in `third_party/CSAD` (commit `d46cf85`):
 
 ```bash
